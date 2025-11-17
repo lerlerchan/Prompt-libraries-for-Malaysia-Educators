@@ -9,8 +9,9 @@ A free, open-source collection of 150+ ready-to-use AI prompts specifically desi
 
 - **150+ Curated Prompts** - Professionally crafted for Malaysian education context
 - **10 Categories** - From lesson planning to assessment to parent communication
-- **KSSR/KSSM Aligned** - Follows Malaysian curriculum standards
-- **Multilingual Support** - English, Bahasa Melayu, and Chinese-friendly prompts
+- **KSSR/KSSM/UEC Aligned** - Follows Malaysian curriculum standards (including SJKC and Independent Chinese Schools)
+- **Multilingual Support** - English, Chinese (中文), and Bahasa Melayu prompts
+- **Multiple AI Platforms** - Optimized for ChatGPT, Claude, Gemini, DeepSeek, Qwen, and more
 - **Easy Copy-Paste** - One-click copy functionality
 - **Mobile Responsive** - Works on all devices
 - **100% Free** - No subscriptions, no hidden costs
@@ -110,21 +111,29 @@ Good prompts for this library should:
 ## 🌐 Languages
 
 Currently available in:
-- 🇬🇧 **English** (Main)
+- 🇬🇧 **English** - [View English Prompts](PROMPT_TEMPLATE.md)
+- 🇨🇳 **中文 Chinese** - [查看中文提示词](CHINESE_PROMPTS.md) - For SJKC/UEC educators
 - 🇲🇾 **Bahasa Melayu** (Coming Soon)
-- 🇨🇳 **Chinese** (Coming Soon)
 
 Want to help translate? See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 💡 AI Tools Compatible With
 
-These prompts work with:
+### English Prompts
 - ChatGPT (OpenAI)
 - Claude (Anthropic)
 - Gemini (Google)
 - Microsoft Copilot
 - Perplexity
-- Any other AI chat tool!
+
+### Chinese Prompts (中文提示词)
+- DeepSeek (深度求索)
+- Qwen / 通义千问 (Alibaba)
+- Kimi (月之暗面)
+- Doubao (豆包)
+- MiniMax
+
+Any other AI chat tool compatible with the respective language!
 
 ## 📱 Tech Stack
 
@@ -138,12 +147,15 @@ These prompts work with:
 ```
 malaysia-teacher-prompts/
 │
-├── index.html              # Main page
+├── index.html              # Main landing page with language selection
 ├── styles.css              # Styling
 ├── script.js               # Interactivity
 ├── prompts-data.js         # All prompts data
 ├── README.md               # This file
 ├── CONTRIBUTING.md         # Contribution guidelines
+├── PROMPT_TEMPLATE.md      # English prompts documentation
+├── CHINESE_PROMPTS.md      # Chinese prompts (中文提示词) for SJKC/UEC
+├── MALAY_PROMPTS.md        # Malay prompts (coming soon)
 │
 └── assets/                 # Images/icons (optional)
 ```
