@@ -111,11 +111,11 @@ Good prompts for this library should:
 ## 🌐 Languages
 
 Currently available in:
-- 🇬🇧 **English** - [View English Prompts](PROMPT_TEMPLATE.md)
+- 🇬🇧 **English** - [View English Prompts](PROMPT_TEMPLATE.md) - For SK, SJKC, SJKT, Private Schools
 - 🇨🇳 **中文 Chinese** - [查看中文提示词](CHINESE_PROMPTS.md) - For SJKC/UEC educators
-- 🇲🇾 **Bahasa Melayu** (Coming Soon)
+- 🇲🇾 **Bahasa Melayu** - [Lihat Prompt Bahasa Melayu](MALAY_PROMPTS.md) - For SK and all schools teaching in BM
 
-Want to help translate? See [CONTRIBUTING.md](CONTRIBUTING.md)
+Want to help improve or add more prompts? See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 💡 AI Tools Compatible With
 
@@ -132,6 +132,12 @@ Want to help translate? See [CONTRIBUTING.md](CONTRIBUTING.md)
 - Kimi (月之暗面)
 - Doubao (豆包)
 - MiniMax
+
+### Malay Prompts (Bahasa Melayu)
+- Google Gemini
+- ILMU (YTL Labs) - Malaysian AI for Education
+- ChatGPT (OpenAI)
+- Claude (Anthropic)
 
 Any other AI chat tool compatible with the respective language!
 
