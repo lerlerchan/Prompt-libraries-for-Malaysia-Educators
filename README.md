@@ -173,8 +173,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📮 Contact
 
 - GitHub Issues: [Create an issue](https://github.com/yourusername/malaysia-teacher-prompts/issues)
-- Email: your-email@example.com
-- Twitter: @yourhandle
+- Email: lkchan@sc.edu.my
 
 ## ⭐ Star This Repo!
 
