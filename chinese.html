@@ -164,6 +164,24 @@
         </div>
     </div>
 
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="搜索提示词... (例如: 数学, 评估, 创意写作)">
+            </div>
+            <div class="filter-buttons" id="filterButtons">
+                <button class="filter-btn active" data-category="all">全部</button>
+                <button class="filter-btn" data-category="通用">通用兼容</button>
+                <button class="filter-btn" data-category="deepseek">DeepSeek</button>
+                <button class="filter-btn" data-category="qwen">Qwen</button>
+                <button class="filter-btn" data-category="minimax">MiniMax</button>
+                <button class="filter-btn" data-category="exam">考试工具</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
@@ -180,13 +198,13 @@
             </div>
 
             <!-- Universal Prompts Section -->
-            <h2 class="category-title">📚 通用兼容提示词</h2>
+            <h2 class="category-title" data-category="通用">📚 通用兼容提示词</h2>
             <p style="margin-bottom: 2rem; color: var(--text-secondary);">这些提示词适用于所有中文大语言模型，包括 DeepSeek、Qwen、Kimi、Doubao、MiniMax 等。</p>
 
             <!-- 课程规划 -->
-            <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);">📝 课程规划</h3>
+            <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);" data-category="通用">📝 课程规划</h3>
 
-            <div class="prompt-card">
+            <div class="prompt-card" data-category="通用">
                 <div class="prompt-title">
                     <i class="fas fa-book"></i>
                     1. 课程单元设计
@@ -828,6 +846,7 @@
     </footer>
 
     <script>
+        // Copy function
         function copyPrompt(button) {
             const promptCard = button.closest('.prompt-card');
             const promptContent = promptCard.querySelector('.prompt-content').textContent;
@@ -855,6 +874,98 @@
                 console.error('Failed to copy:', err);
             });
         }
+
+        // Add category data attributes to all prompt cards
+        document.addEventListener('DOMContentLoaded', function() {
+            // Universal prompts
+            const universalSection = document.querySelectorAll('.prompt-card');
+            universalSection.forEach((card, index) => {
+                if (index < 9) card.setAttribute('data-category', '通用');
+                else if (index < 13) card.setAttribute('data-category', 'deepseek');
+                else if (index < 17) card.setAttribute('data-category', 'qwen');
+                else if (index < 21) card.setAttribute('data-category', 'minimax');
+                else card.setAttribute('data-category', 'exam');
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const promptCards = document.querySelectorAll('.prompt-card');
+            const categoryTitles = document.querySelectorAll('.category-title, h3[data-category]');
+
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                let visibleCount = 0;
+
+                promptCards.forEach(card => {
+                    const title = card.querySelector('.prompt-title').textContent.toLowerCase();
+                    const content = card.querySelector('.prompt-content').textContent.toLowerCase();
+
+                    if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/hide category titles based on visible cards
+                categoryTitles.forEach(title => {
+                    const nextCards = [];
+                    let nextElement = title.nextElementSibling;
+
+                    while (nextElement && !nextElement.classList.contains('category-title')) {
+                        if (nextElement.classList.contains('prompt-card')) {
+                            nextCards.push(nextElement);
+                        }
+                        nextElement = nextElement.nextElementSibling;
+                    }
+
+                    const hasVisibleCards = nextCards.some(card => card.style.display !== 'none');
+                    title.style.display = hasVisibleCards || searchTerm === '' ? 'block' : 'none';
+                });
+            });
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    // Clear search
+                    searchInput.value = '';
+
+                    // Filter cards
+                    promptCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (category === 'all' || cardCategory === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Show/hide sections
+                    categoryTitles.forEach(title => {
+                        const titleCategory = title.getAttribute('data-category');
+                        if (category === 'all') {
+                            title.style.display = 'block';
+                        } else if (titleCategory) {
+                            const showTitle = titleCategory === category ||
+                                            (category === 'deepseek' && title.textContent.includes('DeepSeek')) ||
+                                            (category === 'qwen' && title.textContent.includes('Qwen')) ||
+                                            (category === 'minimax' && title.textContent.includes('MiniMax')) ||
+                                            (category === 'exam' && title.textContent.includes('考试'));
+                            title.style.display = showTitle ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
+        });
     </script>
 </body>
 </html>
