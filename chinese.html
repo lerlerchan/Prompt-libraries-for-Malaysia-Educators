@@ -177,6 +177,7 @@
                 <button class="filter-btn" data-category="deepseek">DeepSeek</button>
                 <button class="filter-btn" data-category="qwen">Qwen</button>
                 <button class="filter-btn" data-category="minimax">MiniMax</button>
+                <button class="filter-btn" data-category="nanoBanana2">NanoBanana 2</button>
                 <button class="filter-btn" data-category="exam">考试工具</button>
             </div>
         </div>
@@ -570,9 +571,7 @@
             </div>
 
             <!-- MiniMax Section -->
-            <h2 class="category-title">🎨 <a
-            href="https://agent.minimax.io/" target="_blank">MiniMax </a></h2> 专用提示词 <span
-            class="ai-model-badge">创意生成</span></h2>
+            <h2 class="category-title">🎨 <a href="https://agent.minimax.io/" target="_blank">MiniMax</a> 专用提示词 <span class="ai-model-badge">创意生成</span></h2>
             <p style="margin-bottom: 2rem; color: var(--text-secondary);">MiniMax 模型特点:创意生成、故事叙述、艺术设计、想象力激发</p>
 
             <div class="prompt-card">
@@ -804,6 +803,96 @@
                 </button>
             </div>
 
+            <!-- NanoBanana 2 Infographic Section -->
+            <h2 class="category-title">🖼️ <a href="https://deepmind.google/models/gemini-image/pro/" target="_blank">NanoBanana 2</a> 信息图生成 <span class="ai-model-badge">信息图设计</span></h2>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">NanoBanana 2 模型特点:快速生成高质量信息图、流程图、思维导图、视觉化教学内容</p>
+
+            <!-- Sample Infographic Display -->
+            <div style="margin: 2rem 0; background: var(--card-bg); padding: 1.5rem; border-radius: 0.75rem; box-shadow: var(--shadow-md);">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-color);">💡 示例输出 (by Danny Hoe)</h3>
+                <img src="Images/AILearning.jpg" alt="AI Learning Roadmap Infographic" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;">
+                <p style="color: var(--text-secondary); font-size: 0.95rem; font-style: italic;">这是使用下方提示词生成的AI学习快速入门路线图信息图示例</p>
+            </div>
+
+            <div class="prompt-card" data-category="nanoBanana2">
+                <div class="prompt-title">
+                    <i class="fas fa-diagram-project"></i>
+                    1. AI学习快速入门路线图 (by Danny Hoe)
+                </div>
+                <div class="prompt-content">描述要如何快速学习AI，主要要学n8n AI自动化, 氛围编程, AI Engineering，最后要找大师Dr. Lau Cher Han 大马AI科学家，整理以上内容并生成一张图片</div>
+                <button class="copy-btn" onclick="copyPrompt(this)">
+                    <i class="fas fa-copy"></i> 复制提示词
+                </button>
+            </div>
+
+            <div class="prompt-card" data-category="nanoBanana2">
+                <div class="prompt-title">
+                    <i class="fas fa-flow-branch"></i>
+                    2. 流程图生成模板
+                </div>
+                <div class="prompt-content">请为[科目]的[课题]生成一个清晰的流程图(Flowchart)信息图,适合[年级]学生。
+
+内容要求:
+1. 标题:[流程名称]
+2. 步骤:清晰列出[X]个主要步骤
+3. 决策点:若有判断/选择,请标明
+4. 起点和终点:明确标识
+5. 颜色编码:用不同颜色区分不同类型的步骤
+6. 适合华小/独中教学场景
+
+请生成一张视觉上吸引的流程图。</div>
+                <button class="copy-btn" onclick="copyPrompt(this)">
+                    <i class="fas fa-copy"></i> 复制提示词
+                </button>
+            </div>
+
+            <div class="prompt-card" data-category="nanoBanana2">
+                <div class="prompt-title">
+                    <i class="fas fa-project-diagram"></i>
+                    3. 思维导图生成
+                </div>
+                <div class="prompt-content">请为[科目]的中心主题[主题名称]生成一个思维导图(Mind Map),适合[年级]学生。
+
+思维导图要求:
+1. 中心概念:明确且清晰
+2. 主要分支:[X]个主分支,代表关键概念
+3. 子分支:每个主分支下包含2-3个细节
+4. 层级清晰:从总体到具体
+5. 图形化表现:使用不同颜色、图标和形状
+6. 教学用途:[说明如何在课堂中使用]
+
+请生成一张结构清晰、易于理解的思维导图。</div>
+                <button class="copy-btn" onclick="copyPrompt(this)">
+                    <i class="fas fa-copy"></i> 复制提示词
+                </button>
+            </div>
+
+            <div class="prompt-card" data-category="nanoBanana2">
+                <div class="prompt-title">
+                    <i class="fas fa-bars-progress"></i>
+                    4. 对比/比较图表生成
+                </div>
+                <div class="prompt-content">请为以下内容生成一个对比/比较信息图,适合[年级]学生理解[科目]中的区别。
+
+对比内容:
+- 概念A:[描述]
+- 概念B:[描述]
+- 对比维度:[列出3-5个要对比的方面,如特点、优缺点、应用场景等]
+
+信息图要求:
+1. 清晰的对比结构(左右并排或上下对比)
+2. 相同点和不同点都要标注
+3. 用不同颜色/图标区分
+4. 包含具体例子或图片
+5. 易于一览无余
+6. 适合华小/独中学生的认知水平
+
+请生成一张视觉上清晰有效的对比图表。</div>
+                <button class="copy-btn" onclick="copyPrompt(this)">
+                    <i class="fas fa-copy"></i> 复制提示词
+                </button>
+            </div>
+
             <!-- Usage Guide -->
             <div class="section-header" style="margin-top: 3rem;">
                 <h2>💡 使用建议</h2>
@@ -815,6 +904,7 @@
                         <li><strong><a href="https://agent.minimax.io/" target="_blank">MiniMax</a></strong>: 适合创意写作、艺术课、故事
                         教学、游戏化学习</li>
                         <li><strong><a href="https://kimi-ai.chat/chat/Kimi" target="_blank">Kimi</a></strong>: 适合试卷命题、答案解析、评分标准、错题分析等考试相关任务</li>
+                        <li><strong><a href="https://deepmind.google/models/gemini-image/pro/" target="_blank">NanoBanana 2</a></strong>: 适合信息图生成、流程图、思维导图、视觉化教学内容设计</li>
                         <li><strong>通用提示词</strong>: 适合所有日常教学需求</li>
                     </ul>
 
@@ -881,14 +971,18 @@
 
         // Add category data attributes to all prompt cards
         document.addEventListener('DOMContentLoaded', function() {
-            // Universal prompts
+            // Universal prompts - Only assign categories to cards that don't already have them
             const universalSection = document.querySelectorAll('.prompt-card');
-            universalSection.forEach((card, index) => {
-                if (index < 9) card.setAttribute('data-category', '通用');
-                else if (index < 13) card.setAttribute('data-category', 'deepseek');
-                else if (index < 17) card.setAttribute('data-category', 'qwen');
-                else if (index < 21) card.setAttribute('data-category', 'minimax');
-                else card.setAttribute('data-category', 'exam');
+            let cardIndexToAssign = 0;
+            universalSection.forEach((card) => {
+                if (!card.getAttribute('data-category')) {
+                    if (cardIndexToAssign < 9) card.setAttribute('data-category', '通用');
+                    else if (cardIndexToAssign < 13) card.setAttribute('data-category', 'deepseek');
+                    else if (cardIndexToAssign < 17) card.setAttribute('data-category', 'qwen');
+                    else if (cardIndexToAssign < 21) card.setAttribute('data-category', 'minimax');
+                    else card.setAttribute('data-category', 'exam');
+                    cardIndexToAssign++;
+                }
             });
 
             // Search functionality
@@ -963,6 +1057,7 @@
                                             (category === 'deepseek' && title.textContent.includes('DeepSeek')) ||
                                             (category === 'qwen' && title.textContent.includes('Qwen')) ||
                                             (category === 'minimax' && title.textContent.includes('MiniMax')) ||
+                                            (category === 'nanoBanana2' && title.textContent.includes('NanoBanana 2')) ||
                                             (category === 'exam' && title.textContent.includes('考试'));
                             title.style.display = showTitle ? 'block' : 'none';
                         }
