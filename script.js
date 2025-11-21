@@ -65,10 +65,19 @@ function createPromptCard(prompt, categoryId) {
     card.setAttribute('data-prompt-title', prompt.title.toLowerCase());
     card.setAttribute('data-prompt-tags', prompt.tags.join(' ').toLowerCase());
     card.setAttribute('data-category', categoryId);
-    
+
     const tags = prompt.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-    
+
+    // Build image section if image exists
+    const imageSection = prompt.image ? `
+        <div class="prompt-image">
+            <img src="${prompt.image}" alt="${prompt.title}" onerror="this.style.display='none'">
+            ${prompt.imageCredit ? `<p class="image-credit">${prompt.imageCredit}</p>` : ''}
+        </div>
+    ` : '';
+
     card.innerHTML = `
+        ${imageSection}
         <div class="prompt-header">
             <h3 class="prompt-title">${prompt.title}</h3>
         </div>
@@ -84,10 +93,10 @@ function createPromptCard(prompt, categoryId) {
             </button>
         </div>
     `;
-    
+
     // Store full prompt in data attribute
     card.setAttribute('data-full-prompt', prompt.prompt);
-    
+
     return card;
 }
 

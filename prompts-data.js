@@ -856,6 +856,84 @@ Design:
 Include specific links and resources. Consider bandwidth limitations in some Malaysian schools.`
                 }
             ]
+        },
+        {
+            id: "infographic-generation",
+            name: "Infographic Generation",
+            icon: "fa-image",
+            description: "Create visual infographics using NanoBanana Pro to explain concepts and generate educational diagrams",
+            prompts: [
+                {
+                    title: "Solar Energy System Infographic",
+                    description: "Create a flat lay style infographic explaining how solar energy works with visual flow (by DeepMind)",
+                    tags: ["Science", "Visual", "Infographic", "Energy"],
+                    prompt: `High-quality flat lay photography creating a DIY infographic that simply explains how solar energy works, arranged on a clean, light gray textured background. The visual story flows from left to right in clear steps: Content is based on this: https://en.wikipedia.org/wiki/Solar_power. Simple, clean black arrows are hand-drawn onto the background to guide the viewer's eye from the sun to the house, clearly marking the flow of energy. The overall mood is educational, modern, and easy to understand. The image is shot from a top-down, bird's-eye view with soft, even lighting that minimizes shadows and keeps the focus on the process. Format 16:9`,
+                    image: "https://lh3.googleusercontent.com/wHCjEvzZkoWi07X6J9pvb2ucwiQjRAuDJdOAqNuYsY0J5Lu9HlEvamioKb8Vksn6vrBicxnofmJmSZe_a18afnrzQ-2TLgd2RSh7OSGLifgq3n9Kng=w1440-h810-n-nu-rw-lo",
+                    imageCredit: "Image by DeepMind"
+                },
+                {
+                    title: "Flowchart Generation Template",
+                    description: "Create a clear flowchart infographic for any process or concept",
+                    tags: ["Process", "Flowchart", "Visual"],
+                    prompt: `Create a clear and visually appealing flowchart infographic for [Process/Concept] suitable for [Grade Level] students.
+
+Requirements:
+1. Title: [Process name]
+2. Clear flow from left to right or top to bottom
+3. [X] main steps clearly labeled and numbered
+4. Decision points (if/then) clearly marked with diamond shapes
+5. Start and end points clearly identified
+6. Use different colors to differentiate step types
+7. Simple icons or visual elements for each step
+8. Clean, modern design suitable for educational use
+9. Format: 16:9 widescreen
+
+Make it visually engaging and easy to follow, suitable for classroom display or digital learning.`
+                },
+                {
+                    title: "Mind Map Generation",
+                    description: "Create a mind map infographic with central concept and branching ideas",
+                    tags: ["Mind Map", "Brainstorming", "Concept"],
+                    prompt: `Create a beautiful mind map infographic for [Central Topic] suitable for [Grade Level] students.
+
+Requirements:
+1. Central concept clearly displayed in the center
+2. [X] main branches radiating from the center
+3. 2-3 sub-branches under each main branch
+4. Hierarchical organization from general to specific
+5. Use different colors for each main branch
+6. Include small icons or visual elements
+7. Clean, organized layout
+8. Clear, readable typography
+9. Format: 16:9 or square
+
+The mind map should help visualize how different ideas connect to the main concept, perfect for studying or class presentation.`
+                },
+                {
+                    title: "Comparison Chart Infographic",
+                    description: "Create a visual comparison between two or more concepts",
+                    tags: ["Comparison", "Chart", "Analysis"],
+                    prompt: `Create a clear and visually engaging comparison infographic for [Concept A] vs [Concept B] suitable for [Grade Level] students.
+
+Content to compare:
+- Concept A: [Description]
+- Concept B: [Description]
+- Comparison factors: [List 4-6 aspects like characteristics, pros/cons, applications, etc.]
+
+Requirements:
+1. Side-by-side layout for easy comparison
+2. Use contrasting colors for each concept
+3. Clear labels and icons for each factor
+4. Highlight similarities in middle or with connecting elements
+5. Differences clearly marked
+6. Include 1-2 relevant examples for each concept
+7. Professional, modern design
+8. Clean typography and spacing
+9. Format: 16:9 widescreen
+
+The comparison should make it easy for students to understand the key differences and similarities at a glance.`
+                }
+            ]
         }
     ]
 };
