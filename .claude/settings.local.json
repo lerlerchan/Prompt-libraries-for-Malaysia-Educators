@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(move README.md docs )",
+      "Bash(move CONTRIBUTING.md docs )",
+      "Bash(move PROMPT_TEMPLATE.md docs )",
+      "Bash(move CHINESE_PROMPTS.md docs )",
+      "Bash(move:*)",
+      "Bash(move SETUP.md docs )",
+      "Bash(move QUICKSTART.md docs )",
+      "Bash(move PROJECT_SUMMARY.txt docs )",
+      "Bash(tree:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

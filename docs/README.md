@@ -7,11 +7,12 @@ A free, open-source collection of 150+ ready-to-use AI prompts specifically desi
 
 ## 🌟 Features
 
-- **150+ Curated Prompts** - Professionally crafted for Malaysian education context
-- **10 Categories** - From lesson planning to assessment to parent communication
+- **180+ Curated Prompts** - Professionally crafted for Malaysian education context
+- **11 Categories** - From lesson planning to assessment to visual infographic generation
 - **KSSR/KSSM/UEC Aligned** - Follows Malaysian curriculum standards (including SJKC and Independent Chinese Schools)
 - **Multilingual Support** - English, Chinese (中文), and Bahasa Melayu prompts
-- **Multiple AI Platforms** - Optimized for ChatGPT, Claude, Gemini, DeepSeek, Qwen, and more
+- **Visual Infographic Generation** - Create stunning educational diagrams with NanoBanana Pro
+- **Multiple AI Platforms** - Optimized for ChatGPT, Claude, Gemini, DeepSeek, Qwen, NanoBanana Pro, and more
 - **Easy Copy-Paste** - One-click copy functionality
 - **Mobile Responsive** - Works on all devices
 - **100% Free** - No subscriptions, no hidden costs
@@ -26,6 +27,9 @@ A free, open-source collection of 150+ ready-to-use AI prompts specifically desi
 6. **English Language Teaching** - ESL/EFL activities, grammar games, writing
 7. **Classroom Management** - Behavior systems, rules, attention strategies
 8. **Digital Learning Tools** - Google Classroom activities, virtual field trips
+9. **Infographic Generation** - Create visual diagrams, flowcharts, mind maps with NanoBanana Pro
+10. **KBAT & PAK-21** (Malay) - Higher-order thinking & 21st century learning activities
+11. **Learning-focused Categories** - Curated based on language versions (Chinese & Malay versions)
 
 ## 🚀 Quick Start
 
@@ -72,6 +76,24 @@ Create a lesson plan for [Subject] on [Topic] for Year [Grade]...
 ```
 Create a lesson plan for Science on States of Matter for Year 4...
 ```
+
+## 🎨 Infographic Generation
+
+Our library includes **visual infographic prompts** to help you create stunning educational diagrams:
+
+### Available Infographic Types:
+- **Flowcharts** - Process flows, step-by-step procedures, decision trees
+- **Mind Maps** - Concept organization, brainstorming, hierarchical ideas
+- **Comparison Charts** - Side-by-side concept comparison, pros/cons
+- **Recipe/Tutorial Infographics** - Step-by-step visual guides
+- **Roadmap Diagrams** - Learning paths, project timelines, progression
+
+### Featured Examples:
+- 🌞 **English**: Solar Energy System (by DeepMind)
+- 🤖 **Chinese**: AI Learning Roadmap (by Danny Hoe)
+- 🍌 **Malay**: Jemput-Jemput Pisang Recipe (by LerLerChan)
+
+All infographic prompts are optimized for **NanoBanana Pro** and work across English, Chinese, and Malay versions!
 
 ## 🤝 Contributing
 
@@ -138,6 +160,10 @@ Want to help improve or add more prompts? See [CONTRIBUTING.md](CONTRIBUTING.md)
 - ILMU (YTL Labs) - Malaysian AI for Education
 - ChatGPT (OpenAI)
 - Claude (Anthropic)
+
+### Infographic Generation (All Languages)
+- **NanoBanana Pro** - Visual infographic and diagram generation
+- Gemini (Google) - Image and visual content generation
 
 Any other AI chat tool compatible with the respective language!
 
