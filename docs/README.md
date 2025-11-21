@@ -35,7 +35,7 @@ A free, open-source collection of 150+ ready-to-use AI prompts specifically desi
 
 ### For Teachers (Users)
 
-1. Visit the website: [Your GitHub Pages URL]
+1. Visit the website: [[URL](https://lerlerchan.github.io/Prompt-libraries-for-Malaysia-Educators/src/index.html)]
 2. Browse or search for prompts
 3. Click "Copy Prompt"
 4. Paste into ChatGPT, Claude, Gemini, or any AI tool
@@ -91,7 +91,7 @@ Our library includes **visual infographic prompts** to help you create stunning 
 ### Featured Examples:
 - 🌞 **English**: Solar Energy System (by DeepMind)
 - 🤖 **Chinese**: AI Learning Roadmap (by Danny Hoe)
-- 🍌 **Malay**: Jemput-Jemput Pisang Recipe (by LerLerChan)
+- 🍌 **Malay**: Jemput-Jemput Pisang Recipe (by https://lertraveldiary.com)
 
 All infographic prompts are optimized for **NanoBanana Pro** and work across English, Chinese, and Malay versions!
 
@@ -194,7 +194,7 @@ malaysia-teacher-prompts/
 
 ## 🐛 Found a Bug?
 
-Please [open an issue](https://github.com/yourusername/malaysia-teacher-prompts/issues) with:
+Please [open an issue](https://github.com/lerlerchan/malaysia-teacher-prompts/issues) with:
 - Description of the bug
 - Steps to reproduce
 - Expected vs actual behavior
@@ -202,7 +202,7 @@ Please [open an issue](https://github.com/yourusername/malaysia-teacher-prompts/
 
 ## 💬 Feedback & Suggestions
 
-Have ideas for improvement? [Start a discussion](https://github.com/yourusername/malaysia-teacher-prompts/discussions) or open an issue!
+Have ideas for improvement? [Start a discussion](https://github.com/lerlerchan/malaysia-teacher-prompts/discussions) or open an issue!
 
 ## 📜 License
 
@@ -217,7 +217,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📮 Contact
 
 - GitHub Issues: [Create an issue](https://github.com/yourusername/malaysia-teacher-prompts/issues)
-- Email: lkchan@sc.edu.my
+- Email: [maito:lkchan@sc.edu.my]
 
 ## ⭐ Star This Repo!
 
