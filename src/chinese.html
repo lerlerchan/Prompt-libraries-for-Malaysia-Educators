@@ -7,85 +7,6 @@
     <meta name="description" content="专为马来西亚华小(SJKC)和独中(UEC)教师设计的中文AI提示词库,支持DeepSeek、Qwen、Kimi等中文AI模型">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .prompt-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .section-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header p {
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-
-        .category-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 2.5rem 0 1.5rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        .ai-model-badge {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-        }
-
-        .breadcrumb {
-            padding: 1rem 0;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Grid */
-        @media (max-width: 1024px) {
-            .prompt-cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .prompt-cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Section headers within grid */
-        .prompt-cards-grid h3 {
-            grid-column: 1 / -1;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -297,14 +218,15 @@
                     </button>
                 </div>
             </div>
+            </div>
 
             <!-- 学生支持 -->
             <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);">🎯 学生支持</h3>
 
             <div class="prompt-cards-grid">
-            <div class="prompt-card">
+            <div class="prompt-card" data-category="通用">
                 <div class="prompt-title">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-chart-line"></i>
                     6. 差异化教学策略
                 </div>
                 <div class="prompt-content">我班上有不同程度的学生。请为[科目]课题[课题名称]提供差异化教学策略。
@@ -925,12 +847,6 @@
             <h2 class="category-title">🖼️ <a href="https://deepmind.google/models/gemini-image/pro/" target="_blank">NanoBanana Pro</a> 信息图生成 <span class="ai-model-badge">信息图设计</span></h2>
             <p style="margin-bottom: 2rem; color: var(--text-secondary);">NanoBanana Pro 模型特点:快速生成高质量信息图、流程图、思维导图、视觉化教学内容</p>
 
-            <!-- Sample Infographic Display -->
-            <div style="margin: 2rem 0; background: var(--card-bg); padding: 1.5rem; border-radius: 0.75rem; box-shadow: var(--shadow-md);">
-                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-color);">💡 示例输出 (by Danny Hoe)</h3>
-                <img src="../assets/AILearning.jpg" alt="AI Learning Roadmap Infographic" style="width: 100%; height: auto; border-radius: 0.5rem; margin-bottom: 1rem;">
-                <p style="color: var(--text-secondary); font-size: 0.95rem; font-style: italic;">这是使用下方提示词生成的AI学习快速入门路线图信息图示例</p>
-            </div>
 
             <div class="prompt-cards-grid">
             <div class="prompt-card" data-category="nanoBanana2">
@@ -938,6 +854,7 @@
                     <i class="fas fa-diagram-project"></i>
                     1. AI学习快速入门路线图 (by Danny Hoe)
                 </div>
+                <img src="../assets/AILearning.jpg" alt="AI Learning Roadmap Infographic" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem;">
                 <div class="prompt-content">描述要如何快速学习AI，主要要学n8n AI自动化, 氛围编程, AI Engineering，最后要找大师Dr. Lau Cher Han 大马AI科学家，整理以上内容并生成一张图片</div>
                 <div class="prompt-actions">
                     <button class="copy-btn" onclick="copyPrompt(this)">
