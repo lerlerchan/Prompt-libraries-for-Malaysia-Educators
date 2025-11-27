@@ -8,64 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .prompt-card {
-            background: var(--card-bg);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s;
-        }
-
-        .prompt-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .prompt-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .prompt-content {
-            background: var(--bg-color);
-            border-left: 4px solid var(--primary-color);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin: 1rem 0;
-            white-space: pre-wrap;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--text-primary);
-        }
-
-        .copy-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1.25rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .copy-btn:hover {
-            background: var(--primary-dark);
-            transform: scale(1.05);
-        }
-
-        .copy-btn.copied {
-            background: var(--secondary-color);
+        .prompt-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .section-header {
@@ -119,6 +66,24 @@
 
         .breadcrumb a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Grid */
+        @media (max-width: 1024px) {
+            .prompt-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .prompt-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section headers within grid */
+        .prompt-cards-grid h3 {
+            grid-column: 1 / -1;
         }
     </style>
 </head>
@@ -205,6 +170,7 @@
             <!-- 课程规划 -->
             <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);" data-category="通用">📝 课程规划</h3>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card" data-category="通用">
                 <div class="prompt-title">
                     <i class="fas fa-book"></i>
@@ -220,9 +186,14 @@
 - 提供差异化教学建议
 
 请以表格形式呈现教学流程。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -242,9 +213,14 @@
 7. 作业安排
 
 请确保教学活动有趣且适合华文教学环境。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -260,14 +236,21 @@
 - 融入马来西亚本土文化元素
 - 提供协作学习机会
 - 包含多元评估方式</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- 评估与考试 -->
             <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);">📊 评估与考试</h3>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-chart-line"></i>
@@ -281,9 +264,14 @@
 - 适合课堂即时反馈
 - 能诊断学生的学习困难
 - 提供改进教学的建议</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -300,14 +288,20 @@
 - 需要的材料容易取得
 - 能激发学生参与和互动
 - 适合华文教学环境</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <!-- 学生支持 -->
             <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);">🎯 学生支持</h3>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-users"></i>
@@ -325,9 +319,14 @@
 2. 教学活动设计
 3. 评估方式
 4. 延伸学习建议</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -343,14 +342,21 @@
 3. 提供针对性的教学干预策略
 4. 建议家长可以如何配合
 5. 制定进步追踪计划</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- 课堂管理 -->
             <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);">🏫 课堂管理</h3>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-list-check"></i>
@@ -365,14 +371,21 @@
 - 提供规则教导活动
 - 建议奖励与后果系统
 - 适合中文环境呈现</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- 专业发展 -->
             <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--primary-color);">💡 专业发展</h3>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-mirror"></i>
@@ -389,15 +402,23 @@
 1. 分析课堂的优点和不足
 2. 提供改进建议
 3. 建议下次教学的调整方向</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
+            </div>
             </div>
 
             <!-- DeepSeek Section -->
             <h2 class="category-title">🔍 <a href="https://chat.deepseek.com/" target="_blank">DeepSeek</a> 专用提示词 <span class="ai-model-badge">推理能力强</span></h2>
             <p style="margin-bottom: 2rem; color: var(--text-secondary);">DeepSeek 模型特点:强大的推理能力、数理逻辑、编程支持、深度分析</p>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-calculator"></i>
@@ -418,9 +439,14 @@
 6. 相关的练习题(附答案)
 
 请用结构化的方式呈现,便于教学使用。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -439,9 +465,14 @@
 6. 跨学科连接
 
 请运用你的推理能力,建立清晰的知识架构。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -460,9 +491,14 @@
 6. 延伸挑战任务
 
 请提供清晰的教学步骤和代码。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -479,15 +515,22 @@
 4. 分析题目考查的思维能力
 5. 提供变式练习
 6. 适合华小/独中学生的认知水平</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- Qwen Section -->
             <h2 class="category-title">🌐 <a href="https://chat.qwen.ai/" target="_blank">Qwen</a> 通义千问专用提示词 <span class="ai-model-badge">多模态</span></h2>
             <p style="margin-bottom: 2rem; color: var(--text-secondary);">Qwen 模型特点:多语言能力、多模态理解、文化适应性强、创意与实用并重</p>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-language"></i>
@@ -504,9 +547,14 @@
 6. 适合多语言环境的教学活动
 
 请确保语言切换自然,符合马来西亚教育情境。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -524,9 +572,14 @@
 5. 课后延伸活动
 
 请描述每个多媒体元素的教学功能和呈现方式。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -545,9 +598,14 @@
 6. 适合华小/独中多元环境
 
 请提供丰富的文化背景资料和教学建议。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -565,15 +623,22 @@
 5. 评估标准
 
 请详细描述如何引导学生发展多模态理解能力。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- MiniMax Section -->
             <h2 class="category-title">🎨 <a href="https://agent.minimax.io/" target="_blank">MiniMax</a> 专用提示词 <span class="ai-model-badge">创意生成</span></h2>
             <p style="margin-bottom: 2rem; color: var(--text-secondary);">MiniMax 模型特点:创意生成、故事叙述、艺术设计、想象力激发</p>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-pen-fancy"></i>
@@ -590,9 +655,14 @@
 6. 评估标准(着重创意和表达)
 
 请发挥创意,让写作变得有趣。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -611,9 +681,14 @@
 
 故事长度:约[字数]字
 请确保故事引人入胜,同时准确传达学习内容。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -632,9 +707,14 @@
 6. 评估标准(学科理解+艺术表现)
 
 请提供激发创意的具体建议。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -654,14 +734,21 @@
 7. 教师引导要点
 
 请确保游戏既有趣又有学习价值。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- Exam Tools Section -->
             <h2 class="category-title">📝 考试相关工具</h2>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card">
                 <div class="prompt-title">
                     <i class="fas fa-file-alt"></i>
@@ -682,9 +769,14 @@
 2. 标准答案
 3. 评分标准
 4. 各题考查的知识点和能力</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -705,9 +797,14 @@
 6. 相似题型
 
 请确保解析清晰易懂,便于教师讲解。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -729,9 +826,14 @@
 5. 提供评分示例
 
 请以表格形式呈现量规。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -753,9 +855,14 @@
 5. 建议后续评估方式
 
 请提供实用的教学策略。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -777,9 +884,14 @@
 6. 评分注意事项
 
 请确保答案方案严谨且便于教师评分。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card">
@@ -798,9 +910,15 @@
 - 标注课题标签和难度等级
 
 请按题型分类组织题目。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- NanoBanana Pro Infographic Section -->
@@ -814,15 +932,21 @@
                 <p style="color: var(--text-secondary); font-size: 0.95rem; font-style: italic;">这是使用下方提示词生成的AI学习快速入门路线图信息图示例</p>
             </div>
 
+            <div class="prompt-cards-grid">
             <div class="prompt-card" data-category="nanoBanana2">
                 <div class="prompt-title">
                     <i class="fas fa-diagram-project"></i>
                     1. AI学习快速入门路线图 (by Danny Hoe)
                 </div>
                 <div class="prompt-content">描述要如何快速学习AI，主要要学n8n AI自动化, 氛围编程, AI Engineering，最后要找大师Dr. Lau Cher Han 大马AI科学家，整理以上内容并生成一张图片</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card" data-category="nanoBanana2">
@@ -841,9 +965,14 @@
 6. 适合华小/独中教学场景
 
 请生成一张视觉上吸引的流程图。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card" data-category="nanoBanana2">
@@ -862,9 +991,14 @@
 6. 教学用途:[说明如何在课堂中使用]
 
 请生成一张结构清晰、易于理解的思维导图。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
             </div>
 
             <div class="prompt-card" data-category="nanoBanana2">
@@ -888,9 +1022,15 @@
 6. 适合华小/独中学生的认知水平
 
 请生成一张视觉上清晰有效的对比图表。</div>
-                <button class="copy-btn" onclick="copyPrompt(this)">
-                    <i class="fas fa-copy"></i> 复制提示词
-                </button>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)">
+                        <i class="fas fa-eye"></i> 查看全文
+                    </button>
+                </div>
+            </div>
             </div>
 
             <!-- Usage Guide -->
@@ -927,7 +1067,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2024 Malaysian Teachers Prompt Library</p>
+                    <p>&copy; 2025 Malaysian Teachers Prompt Library</p>
                     <p class="footer-note">为马来西亚教育工作者用心打造 ❤️</p>
                 </div>
                 <div class="footer-right">
@@ -968,6 +1108,189 @@
                 console.error('Failed to copy:', err);
             });
         }
+
+        // View full prompt in modal
+        function viewFullPrompt(button) {
+            const card = button.closest('.prompt-card');
+            const fullPrompt = card.querySelector('.prompt-content').textContent;
+            const title = card.querySelector('.prompt-title').textContent;
+
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>${title}</h2>
+                        <button class="modal-close" onclick="closeModal(this)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <pre class="modal-prompt">${escapeHtml(fullPrompt)}</pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="copy-btn" onclick="copyFromModal(this)">
+                            <i class="fas fa-copy"></i> 复制提示词
+                        </button>
+                        <button class="view-btn" onclick="closeModal(this)">关闭</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+
+            // Close on background click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal(modal.querySelector('.modal-close'));
+                }
+            });
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal(button) {
+            const modal = button.closest('.modal');
+            modal.remove();
+            document.body.style.overflow = '';
+        }
+
+        // Copy from modal
+        function copyFromModal(button) {
+            const modal = button.closest('.modal');
+            const promptText = modal.querySelector('.modal-prompt').textContent;
+
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> 已复制!';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Add modal styles dynamically
+        const modalStyles = `
+        <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 0.75rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #1e293b;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #1e293b;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .modal-prompt {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #2563eb;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .modal-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        @media (max-width: 768px) {
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-content {
+                max-height: 95vh;
+            }
+
+            .modal-header h2 {
+                font-size: 1.125rem;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+            }
+
+            .modal-footer button {
+                width: 100%;
+            }
+        }
+        </style>
+        `;
+
+        document.head.insertAdjacentHTML('beforeend', modalStyles);
 
         // Add category data attributes to all prompt cards
         document.addEventListener('DOMContentLoaded', function() {
