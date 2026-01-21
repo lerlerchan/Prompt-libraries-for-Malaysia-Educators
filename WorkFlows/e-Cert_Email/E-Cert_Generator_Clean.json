@@ -1,0 +1,257 @@
+{
+  "name": "E-Cert Generator - Form to Email",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1bIlp0uGjgMAz7BxNYAZ4cvS_91tKVm3n8QF1sKAZtts",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Form Responses 1",
+          "mode": "name"
+        },
+        "event": "rowAdded",
+        "options": {
+          "dateTimeRenderOption": "SERIAL_NUMBER"
+        }
+      },
+      "id": "c1057c89-ccb9-40a5-af92-d88b863a4465",
+      "name": "Google Sheets Trigger",
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "C04z48LovL0ZjXhx",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "1GaLFuTyeWx6gCyAhmMLmeOigu3l-W5Mp4NVdbs0cpkY",
+          "mode": "id"
+        },
+        "newName": "Certificate - {{ $json['Full Name (as per IC / Certificate)'] }}"
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [224, 0],
+      "id": "4dafed0b-bbf4-4414-8134-0fb4963d1cf8",
+      "name": "Copy File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "lDUfqG0XWehfQ4F4",
+          "name": "Google Drive account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "replaceText",
+        "presentationId": "={{ $json.id }}",
+        "textUi": {
+          "textValues": [
+            {
+              "text": "Name",
+              "replaceText": "={{ $('Google Sheets Trigger').item.json['Full Name (as per IC / Certificate)'] }}"
+            },
+            {
+              "text": "ICno",
+              "replaceText": "={{ $('Google Sheets Trigger').item.json['IC / Passport Number'].toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f852d38f-a525-43fa-8f78-d949b3b63024",
+      "name": "Replace Placeholders",
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [448, 0],
+      "credentials": {
+        "googleSlidesOAuth2Api": {
+          "id": "qYs9JrGwZpyiZ4c2",
+          "name": "Google Slides account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {
+          "googleFileConversion": {
+            "conversion": {
+              "docsToFormat": "application/pdf",
+              "drawingsToFormat": "application/pdf",
+              "slidesToFormat": "application/pdf"
+            }
+          }
+        }
+      },
+      "id": "72b40bb2-cb06-45ee-8b95-8b969d161fd0",
+      "name": "Export as PDF",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [672, 0],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "lDUfqG0XWehfQ4F4",
+          "name": "Google Drive account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Google Sheets Trigger').item.json['Email Address'] }}",
+        "subject": "Your Certificate - Congratulations!",
+        "message": "=Dear {{ $('Google Sheets Trigger').item.json['Full Name (as per IC / Certificate)'] }},\n\nThank you for completing the feedback form.\n\nPlease find your certificate attached to this email.\n\nCongratulations!\n\nBest regards",
+        "options": {
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              {
+                "property": "data"
+              }
+            ]
+          }
+        }
+      },
+      "id": "2d2744ef-3f84-44a6-9b69-d103e56f3948",
+      "name": "Send Certificate Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [880, 0],
+      "webhookId": "c6d0ccd0-1f3d-43cb-991b-ca23f068b588",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "4FYoRb8oR1UMYO9Y",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1bIlp0uGjgMAz7BxNYAZ4cvS_91tKVm3n8QF1sKAZtts",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Form Responses 1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Cert Status": "Sent"
+          },
+          "matchingColumns": ["Email Address"],
+          "schema": [
+            {
+              "id": "Email Address",
+              "displayName": "Email Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Cert Status",
+              "displayName": "Cert Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "a8f6eb3a-c0a9-4a91-b627-c391c028fd72",
+      "name": "Update Sheet Status",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1104, 0],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "yruhshiIlDVEbZSs",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteFile",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Copy File').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "47ac747e-61dc-4b94-b33c-5ff64715dec1",
+      "name": "Delete Temp Slide",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1328, 0],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "lDUfqG0XWehfQ4F4",
+          "name": "Google Drive account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [[{"node": "Copy File", "type": "main", "index": 0}]]
+    },
+    "Copy File": {
+      "main": [[{"node": "Replace Placeholders", "type": "main", "index": 0}]]
+    },
+    "Replace Placeholders": {
+      "main": [[{"node": "Export as PDF", "type": "main", "index": 0}]]
+    },
+    "Export as PDF": {
+      "main": [[{"node": "Send Certificate Email", "type": "main", "index": 0}]]
+    },
+    "Send Certificate Email": {
+      "main": [[{"node": "Update Sheet Status", "type": "main", "index": 0}]]
+    },
+    "Update Sheet Status": {
+      "main": [[{"node": "Delete Temp Slide", "type": "main", "index": 0}]]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner"
+  }
+}
