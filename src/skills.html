@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Tools for Rural Educators | Malaysian Teachers Prompt Library</title>
+    <meta name="description" content="Offline-capable AI tools (Ollama) and Claude Code CLI skills for Malaysian rural educators. Works without internet.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Malaysian Teachers Prompt Library</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#categories">Prompts</a>
+                    <a href="index.html#about">About</a>
+                    <div class="nav-dropdown">
+                        <a href="references.html">References ▾</a>
+                        <div class="nav-dropdown-menu">
+                            <a href="references.html">📚 Resources</a>
+                            <a href="skills.html">🛠️ Skills &amp; Tools</a>
+                        </div>
+                    </div>
+                    <div class="language-selector">
+                        <span class="lang-label">Language:</span>
+                        <a href="index.html" class="lang-btn active">English</a>
+                        <a href="malay.html" class="lang-btn">Bahasa</a>
+                        <a href="chinese.html" class="lang-btn">中文</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="skills-hero">
+        <div class="container">
+            <h2>🛠️ AI Tools for Every Classroom — Even Without Internet</h2>
+            <p class="hero-subtitle">Empowering rural Malaysian educators with offline-capable AI tools and ready-to-use skills for smarter, more accessible teaching</p>
+            <div class="stats-chips">
+                <span class="stat-chip">19 Skills</span>
+                <span class="stat-chip">100% Offline</span>
+                <span class="stat-chip">Free &amp; Open Source</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a> /
+            <a href="references.html">References</a> /
+            <span>Skills &amp; Tools</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Section 1: The Challenge -->
+            <section class="references-section">
+                <h2>⚡ The Rural Connectivity Challenge</h2>
+                <div class="reference-category">
+                    <h3><i class="fas fa-wifi"></i> Why Cloud-Only AI Fails Rural Schools</h3>
+                    <p>Malaysian educators in Sabah, Sarawak, and remote peninsular regions face a daily reality that city-based teachers rarely encounter: <strong>unstable or absent internet</strong>.</p>
+                    <ul class="reference-list" style="list-style:none;padding:0;margin-top:1rem;">
+                        <li style="padding:0.75rem 0;border-bottom:1px solid var(--border-color);">
+                            <strong>📡 Latency &amp; dropped connections</strong>
+                            <p>Cloud AI tools like ChatGPT and Gemini require stable broadband. A lesson interrupted by a timeout wastes precious class time.</p>
+                        </li>
+                        <li style="padding:0.75rem 0;border-bottom:1px solid var(--border-color);">
+                            <strong>💰 Mobile data costs</strong>
+                            <p>Many rural teachers use mobile hotspots. Streaming large AI model responses consumes expensive data plans.</p>
+                        </li>
+                        <li style="padding:0.75rem 0;">
+                            <strong>🔒 Privacy &amp; data sovereignty</strong>
+                            <p>Student data should stay local. Offline tools keep sensitive classroom data on your own device.</p>
+                        </li>
+                    </ul>
+                    <p style="margin-top:1rem;padding:1rem;background:var(--bg-color);border-radius:8px;border-left:4px solid var(--primary-color);">
+                        <strong>The solution:</strong> Run AI models locally on your laptop or desktop using <strong>Ollama</strong> — no internet needed after the initial one-time setup.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2: Ollama -->
+            <section class="references-section">
+                <h2>🦙 Ollama — Fully Offline Local AI</h2>
+                <div class="reference-category">
+                    <h3><i class="fas fa-laptop"></i> What is Ollama?</h3>
+                    <span class="offline-badge">✓ Works Offline</span>
+                    <p>Ollama is a free, open-source tool that runs large language models <strong>entirely on your computer</strong>. Once you download a model (one-time, ~2–4 GB), it runs with zero internet connection — even in the deepest jungle.</p>
+                    <p style="margin-top:0.75rem;">
+                        <strong>System requirements:</strong> Works on Windows, Mac, and Linux. Runs acceptably on 8 GB RAM school laptops.
+                    </p>
+                    <p style="margin-top:0.75rem;">
+                        <a href="https://ollama.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Download Ollama (free) →</a>
+                    </p>
+                </div>
+
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-microchip"></i> Recommended Models for Malaysian Schools</h3>
+                    <p>These models are small enough to run on school hardware and strong enough for classroom tasks:</p>
+                    <div class="model-grid">
+                        <div class="model-card">
+                            <div class="offline-badge">Offline</div>
+                            <div class="model-name">gemma2:2b</div>
+                            <div class="model-vendor">by Google · ~1.6 GB</div>
+                            <p>Low resource usage, strong reasoning. Great for lesson planning and Q&amp;A generation.</p>
+                        </div>
+                        <div class="model-card">
+                            <div class="offline-badge">Offline</div>
+                            <div class="model-name">phi3:mini</div>
+                            <div class="model-vendor">by Microsoft · ~2.2 GB</div>
+                            <p>Excellent for structured tasks like lesson plans, rubrics, and formatted reports.</p>
+                        </div>
+                        <div class="model-card">
+                            <div class="offline-badge">Offline</div>
+                            <div class="model-name">qwen2.5:3b</div>
+                            <div class="model-vendor">by Alibaba · ~2.0 GB</div>
+                            <p>Multilingual (Malay &amp; Chinese support). Ideal for Malaysian classrooms with diverse language needs.</p>
+                        </div>
+                        <div class="model-card">
+                            <div class="offline-badge">Offline</div>
+                            <div class="model-name">llama3.2:3b</div>
+                            <div class="model-vendor">by Meta · ~2.0 GB</div>
+                            <p>General-purpose, strong in English. Good for feedback, translations, and explanations.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:1.25rem;background:#1e1b4b;border-radius:8px;padding:1rem 1.25rem;">
+                        <p style="color:#c4b5fd;font-size:0.85rem;margin:0 0 0.5rem;font-family:monospace;opacity:0.7;"># Install and run (one command)</p>
+                        <p style="color:#e2e8f0;font-family:monospace;font-size:0.9rem;margin:0;">ollama run qwen2.5:3b</p>
+                    </div>
+                </div>
+
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> What You Can Do Offline</h3>
+                    <div class="usecase-grid">
+                        <div class="usecase-card">
+                            <div class="usecase-icon">📝</div>
+                            <h4>Generate Lesson Plans</h4>
+                            <p>Describe your topic, year level, and curriculum standard — get a full lesson plan in seconds.</p>
+                        </div>
+                        <div class="usecase-card">
+                            <div class="usecase-icon">✅</div>
+                            <h4>Grade &amp; Give Feedback</h4>
+                            <p>Paste student essays or answers — get constructive feedback without sending data to the cloud.</p>
+                        </div>
+                        <div class="usecase-card">
+                            <div class="usecase-icon">🌐</div>
+                            <h4>Translate Materials</h4>
+                            <p>Translate between English, Bahasa Malaysia, and Chinese using qwen2.5 for multilingual classrooms.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Claude Code CLI Skills -->
+            <section class="references-section">
+                <h2>⚡ Claude Code CLI Skills</h2>
+                <div class="reference-category">
+                    <p>Claude Code's <strong>skills system</strong> lets educators invoke pre-built AI workflows from the command line — like calling a specialist by name. Each skill is a ready-made prompt workflow tailored to a specific educational task.</p>
+                    <p style="margin-top:0.75rem;">Use these skills with Claude Code CLI when you have internet, or paste the skill descriptions from <code>docs/skills.md</code> into Ollama when you don't.</p>
+                </div>
+
+                <!-- Teaching & Curriculum Design -->
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-book-open"></i> Teaching &amp; Curriculum Design</h3>
+                    <span class="offline-badge">5 Skills</span>
+                    <div class="skill-category-grid" style="margin-top:1rem;">
+                        <div class="skill-card">
+                            <h4>Lesson Plan Generator</h4>
+                            <div class="skill-chinese">教案產生工具</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">AI-assisted lesson plan generation aligned with KSSR/KSSM curriculum</p>
+                            <span class="skill-slug">teaching-design-lesson-plan-generator</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Adaptive Learning Design</h4>
+                            <div class="skill-chinese">自適應教學設計</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design adaptive learning pathways tailored to individual student needs</p>
+                            <span class="skill-slug">teaching-design-adaptive-learning-design</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Differentiated Instruction</h4>
+                            <div class="skill-chinese">差異化教學</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Create materials for mixed-ability classrooms</p>
+                            <span class="skill-slug">teaching-design-differentiated-instruction</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Project-Based Learning</h4>
+                            <div class="skill-chinese">專題式學習</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design PBL units with real-world connections</p>
+                            <span class="skill-slug">teaching-design-project-based-learning</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Competency-Based Learning</h4>
+                            <div class="skill-chinese">核心素養教學</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Develop 21st-century competency-based learning activities</p>
+                            <span class="skill-slug">teaching-design-competency-based-learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Analytics -->
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-chart-bar"></i> Learning Analytics</h3>
+                    <span class="offline-badge">4 Skills</span>
+                    <div class="skill-category-grid" style="margin-top:1rem;">
+                        <div class="skill-card">
+                            <h4>Learning Analytics</h4>
+                            <div class="skill-chinese">學習分析</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Analyze student data to identify patterns and improve outcomes</p>
+                            <span class="skill-slug">learning-analytics-learning-analytics</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Competency-Based Assessment</h4>
+                            <div class="skill-chinese">素養導向評量</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design assessments aligned with learning outcomes</p>
+                            <span class="skill-slug">learning-analytics-competency-based-assessment</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Peer Assessment</h4>
+                            <div class="skill-chinese">同儕評量</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design structured peer assessment activities and rubrics</p>
+                            <span class="skill-slug">learning-analytics-peer-assessment</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Student Profiling</h4>
+                            <div class="skill-chinese">學生畫像分析</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Create comprehensive student learning profiles</p>
+                            <span class="skill-slug">learning-analytics-student-profiling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Methods -->
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-flask"></i> Research Methods</h3>
+                    <span class="offline-badge">4 Skills</span>
+                    <div class="skill-category-grid" style="margin-top:1rem;">
+                        <div class="skill-card">
+                            <h4>Educational Research Design</h4>
+                            <div class="skill-chinese">教育研究設計</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design educational research studies with appropriate methodology</p>
+                            <span class="skill-slug">research-methods-education-research-design</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Empirical Research Automation</h4>
+                            <div class="skill-chinese">實證研究自動化</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Automate data collection and analysis for empirical research</p>
+                            <span class="skill-slug">research-methods-empirical-research-automation</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Mixed Methods Research</h4>
+                            <div class="skill-chinese">混合方法</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Combine quantitative and qualitative research approaches</p>
+                            <span class="skill-slug">research-methods-mixed-methods</span>
+                        </div>
+                        <div class="skill-card">
+                            <h4>Quasi-Experimental Design</h4>
+                            <div class="skill-chinese">準實驗設計</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design quasi-experimental studies for educational interventions</p>
+                            <span class="skill-slug">research-methods-quasi-experimental-design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rural & Inclusive Education -->
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-tree"></i> Rural &amp; Inclusive Education</h3>
+                    <span class="offline-badge">2 Skills</span>
+                    <div class="skill-category-grid" style="margin-top:1rem;">
+                        <div class="skill-card" style="border-left-color:#059669;">
+                            <h4>Localized Content Design</h4>
+                            <div class="skill-chinese">在地化內容設計</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design locally relevant content for rural Malaysian contexts (Sabah, Sarawak, Orang Asli)</p>
+                            <span class="skill-slug">rural-education-localized-content-design</span>
+                        </div>
+                        <div class="skill-card" style="border-left-color:#059669;">
+                            <h4>Rural Education Integration</h4>
+                            <div class="skill-chinese">偏遠教育整合</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Integrate technology and community resources for rural schools</p>
+                            <span class="skill-slug">rural-education-rural-education-integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Educational Technology -->
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-robot"></i> AI &amp; Educational Technology</h3>
+                    <span class="offline-badge">2 Skills</span>
+                    <div class="skill-category-grid" style="margin-top:1rem;">
+                        <div class="skill-card" style="border-left-color:#d97706;">
+                            <h4>AI Teaching Tools</h4>
+                            <div class="skill-chinese">AI 教學工具</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Evaluate and implement AI tools appropriate for Malaysian classrooms</p>
+                            <span class="skill-slug">ai-tools-teaching-tools</span>
+                        </div>
+                        <div class="skill-card" style="border-left-color:#d97706;">
+                            <h4>Generative AI Education</h4>
+                            <div class="skill-chinese">生成式 AI 教育</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Design curricula and activities teaching responsible AI use</p>
+                            <span class="skill-slug">ai-tools-generative-ai-education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ICT Integration, Educational Technology, Math-Tech -->
+                <div class="reference-category" style="margin-top:1.5rem;">
+                    <h3><i class="fas fa-cogs"></i> ICT, Technology &amp; Mathematics</h3>
+                    <span class="offline-badge">3 Skills</span>
+                    <div class="skill-category-grid" style="margin-top:1rem;">
+                        <div class="skill-card" style="border-left-color:#0284c7;">
+                            <h4>ICT Integration</h4>
+                            <div class="skill-chinese">ICT 整合融入</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Integrate ICT tools across subjects following MOE Malaysia guidelines</p>
+                            <span class="skill-slug">ict-ict-integration</span>
+                        </div>
+                        <div class="skill-card" style="border-left-color:#0284c7;">
+                            <h4>Math-Technology Education</h4>
+                            <div class="skill-chinese">數學科技教育</div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0.25rem 0;">Use GeoGebra, Desmos, and other tools to enhance Mathematics teaching</p>
+                            <span class="skill-slug">math-tech-math-technology</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: skills.md Reference -->
+            <section class="references-section">
+                <h2>📄 The skills.md Reference File</h2>
+                <div class="skills-md-card">
+                    <h3>What is skills.md?</h3>
+                    <p><code>docs/skills.md</code> is a plain-text reference document containing all 19 skills with descriptions and example prompts. You can paste it directly into any AI CLI tool — including Ollama — to give the AI context about your educational workflow needs.</p>
+                    <code>ollama run llama3.2 "$(cat docs/skills.md) — generate a lesson plan for Year 4 Science"</code>
+                    <p>Or use it with Claude Code CLI:</p>
+                    <code>/skill teaching-design-lesson-plan-generator</code>
+                    <div style="margin-top:1rem;">
+                        <a href="../docs/skills.md" class="btn-download" download>⬇ Download skills.md</a>
+                        <a href="https://github.com/lerlerchan/Prompt-libraries-for-Malaysia-Educators/blob/main/docs/skills.md" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-left:0.75rem;">View on GitHub →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Practical Workflow Example -->
+            <section class="references-section">
+                <h2>🎯 Practical Workflow: Rural Teacher Plans a Lesson Offline</h2>
+                <div class="reference-category">
+                    <p>Here is a step-by-step example of how a teacher in a rural Sarawak school can use AI to prepare a lesson without any internet connection:</p>
+                    <ol class="tool-workflow-steps">
+                        <li>
+                            <div class="step-content">
+                                <strong>Open your terminal</strong>
+                                On Windows: press <code>Win + R</code>, type <code>cmd</code>, press Enter. On Mac: open Terminal from Applications.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-content">
+                                <strong>Start Ollama with a lightweight model</strong>
+                                Type: <code>ollama run qwen2.5:3b</code> — this works completely offline after the first-time download.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-content">
+                                <strong>Paste a skill prompt from skills.md</strong>
+                                Open <code>docs/skills.md</code> in Notepad, copy the "Lesson Plan Generator" example prompt, and paste it into the Ollama chat.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-content">
+                                <strong>Get your lesson plan output</strong>
+                                The AI generates a complete, structured lesson plan in seconds — no internet needed, no data costs.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-content">
+                                <strong>(When online) Use Claude Code CLI for richer results</strong>
+                                When back in a connected area, run <code>/skill teaching-design-lesson-plan-generator</code> in Claude Code for more sophisticated, curriculum-aware outputs.
+                            </div>
+                        </li>
+                    </ol>
+                    <p style="margin-top:1.5rem;padding:1rem;background:var(--bg-color);border-radius:8px;border-left:4px solid #059669;">
+                        <strong>💡 Pro tip:</strong> Download all four recommended Ollama models during school term breaks when you have reliable internet. Then you have multiple offline AI options ready for the entire semester.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Malaysian Teachers Prompt Library</p>
+                    <p class="footer-note">Built with ❤️ for Malaysian educators</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/lerlerchan/Prompt-libraries-for-Malaysia-Educators" target="_blank">
+                        <i class="fab fa-github"></i> Open Source on GitHub
+                    </a>
+                    <span class="separator">|</span>
+                    <a href="index.html#contribute">Contribute</a>
+                    <span class="separator">|</span>
+                    <a href="references.html">References</a>
+                    <span class="separator">|</span>
+                    <a href="mailto:lkchan@sc.edu.my">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
