@@ -123,6 +123,27 @@ function copyPrompt(button) {
     });
 }
 
+function copyWorkflowPrompt(button) {
+    const card = button.closest('.workflow-card');
+    const promptText = card.querySelector('.workflow-prompt-text').textContent.trim();
+    
+    navigator.clipboard.writeText(promptText).then(() => {
+        showNotification('Prompt copied to clipboard!');
+        
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.classList.add('copied');
+        
+        setTimeout(() => {
+            button.innerHTML = originalHTML;
+            button.classList.remove('copied');
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy workflow prompt:', err);
+        showNotification('Failed to copy. Please try again.', 'error');
+    });
+}
+
 // View full prompt in modal
 function viewFullPrompt(button) {
     const card = button.closest('.prompt-card');

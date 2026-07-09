@@ -167,55 +167,76 @@
         <div class="container">
             <h2>5-step NotebookLM Workflow</h2>
             <p class="workflow-intro">Use this five-step flow to move from concept understanding to deeper reflection and revision with NotebookLM.</p>
-            <div class="workflow-table-wrapper">
-                <table class="workflow-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Step</th>
-                            <th scope="col">Step Name</th>
-                            <th scope="col">Exact Prompt</th>
-                            <th scope="col">Purpose</th>
-                            <th scope="col">How Teachers Can Use It</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="workflow-step-number">1</span></td>
-                            <td>Mental Models</td>
-                            <td>“What are the 5 core mental models that every expert in this field shares?”</td>
-                            <td>Understand first principles and expert thinking instead of surface facts.</td>
-                            <td>Help teachers design lessons that focus on conceptual understanding, not memorization.</td>
-                        </tr>
-                        <tr>
-                            <td><span class="workflow-step-number">2</span></td>
-                            <td>Expert Disagreement</td>
-                            <td>“Now show me the 3 places where experts in this field fundamentally disagree, and what each side’s strongest argument is.”</td>
-                            <td>Reveal nuance, gray areas, and debates in the field.</td>
-                            <td>Use for critical thinking, debates, ethics discussions, or higher-order exam questions.</td>
-                        </tr>
-                        <tr>
-                            <td><span class="workflow-step-number">3</span></td>
-                            <td>ELI5 for Complexity</td>
-                            <td>“Identify the 3 most difficult concepts in these sources and explain them to me using a simple analogy from a completely different field (like sports or cooking).”</td>
-                            <td>Translate complex ideas into intuitive understanding.</td>
-                            <td>Generate teaching analogies and explanations suitable for weaker students or beginners.</td>
-                        </tr>
-                        <tr>
-                            <td><span class="workflow-step-number">4</span></td>
-                            <td>Blindspot</td>
-                            <td>“Based on all the uploaded documents, what is a common mistake or misconception that beginners make when learning this subject?”</td>
-                            <td>Prevent common learning mistakes and misunderstandings.</td>
-                            <td>Help teachers anticipate misconceptions and design better scaffolding.</td>
-                        </tr>
-                        <tr>
-                            <td><span class="workflow-step-number">5</span></td>
-                            <td>Deep Dive Audio</td>
-                            <td>Generate the NotebookLM Audio Overview (AI Podcast)</td>
-                            <td>Reinforce learning through discussion-style listening.</td>
-                            <td>Use as revision material, flipped classroom content, or reflective listening.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="workflow-cards-grid">
+                <article class="workflow-card">
+                    <div class="workflow-step-badge">Step 1</div>
+                    <h3>Mental Models</h3>
+                    <p class="workflow-purpose">Understand first principles and expert thinking instead of surface facts.</p>
+                    <div class="workflow-prompt-box">
+                        <p class="workflow-prompt-label">Exact prompt</p>
+                        <p class="workflow-prompt-text">“What are the 5 core mental models that every expert in this field shares?”</p>
+                    </div>
+                    <p class="workflow-use">Help teachers design lessons that focus on conceptual understanding, not memorization.</p>
+                    <button class="copy-btn workflow-copy-btn" type="button" onclick="copyWorkflowPrompt(this)">
+                        <i class="fas fa-copy"></i> Copy Prompt
+                    </button>
+                </article>
+
+                <article class="workflow-card">
+                    <div class="workflow-step-badge">Step 2</div>
+                    <h3>Expert Disagreement</h3>
+                    <p class="workflow-purpose">Reveal nuance, gray areas, and debates in the field.</p>
+                    <div class="workflow-prompt-box">
+                        <p class="workflow-prompt-label">Exact prompt</p>
+                        <p class="workflow-prompt-text">“Now show me the 3 places where experts in this field fundamentally disagree, and what each side’s strongest argument is.”</p>
+                    </div>
+                    <p class="workflow-use">Use for critical thinking, debates, ethics discussions, or higher-order exam questions.</p>
+                    <button class="copy-btn workflow-copy-btn" type="button" onclick="copyWorkflowPrompt(this)">
+                        <i class="fas fa-copy"></i> Copy Prompt
+                    </button>
+                </article>
+
+                <article class="workflow-card">
+                    <div class="workflow-step-badge">Step 3</div>
+                    <h3>ELI5 for Complexity</h3>
+                    <p class="workflow-purpose">Translate complex ideas into intuitive understanding.</p>
+                    <div class="workflow-prompt-box">
+                        <p class="workflow-prompt-label">Exact prompt</p>
+                        <p class="workflow-prompt-text">“Identify the 3 most difficult concepts in these sources and explain them to me using a simple analogy from a completely different field (like sports or cooking).”</p>
+                    </div>
+                    <p class="workflow-use">Generate teaching analogies and explanations suitable for weaker students or beginners.</p>
+                    <button class="copy-btn workflow-copy-btn" type="button" onclick="copyWorkflowPrompt(this)">
+                        <i class="fas fa-copy"></i> Copy Prompt
+                    </button>
+                </article>
+
+                <article class="workflow-card">
+                    <div class="workflow-step-badge">Step 4</div>
+                    <h3>Blindspot</h3>
+                    <p class="workflow-purpose">Prevent common learning mistakes and misunderstandings.</p>
+                    <div class="workflow-prompt-box">
+                        <p class="workflow-prompt-label">Exact prompt</p>
+                        <p class="workflow-prompt-text">“Based on all the uploaded documents, what is a common mistake or misconception that beginners make when learning this subject?”</p>
+                    </div>
+                    <p class="workflow-use">Help teachers anticipate misconceptions and design better scaffolding.</p>
+                    <button class="copy-btn workflow-copy-btn" type="button" onclick="copyWorkflowPrompt(this)">
+                        <i class="fas fa-copy"></i> Copy Prompt
+                    </button>
+                </article>
+
+                <article class="workflow-card">
+                    <div class="workflow-step-badge">Step 5</div>
+                    <h3>Deep Dive Audio</h3>
+                    <p class="workflow-purpose">Reinforce learning through discussion-style listening.</p>
+                    <div class="workflow-prompt-box">
+                        <p class="workflow-prompt-label">Exact prompt</p>
+                        <p class="workflow-prompt-text">Generate the NotebookLM Audio Overview (AI Podcast)</p>
+                    </div>
+                    <p class="workflow-use">Use as revision material, flipped classroom content, or reflective listening.</p>
+                    <button class="copy-btn workflow-copy-btn" type="button" onclick="copyWorkflowPrompt(this)">
+                        <i class="fas fa-copy"></i> Copy Prompt
+                    </button>
+                </article>
             </div>
         </div>
     </section>
