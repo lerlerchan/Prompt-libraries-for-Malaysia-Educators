@@ -535,50 +535,80 @@ body {
     font-size: 1.05rem;
 }
 
-.workflow-table-wrapper {
-    overflow-x: auto;
-    border-radius: 0.75rem;
+.workflow-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.workflow-card {
+    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
     box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.workflow-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--card-bg);
-}
-
-.workflow-table th,
-.workflow-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-    vertical-align: top;
-}
-
-.workflow-table th {
-    background: var(--primary-color);
-    color: white;
-    font-weight: 600;
-}
-
-.workflow-table tr:nth-child(even) {
-    background: #f8fbff;
-}
-
-.workflow-table tr:last-child td {
-    border-bottom: none;
-}
-
-.workflow-step-number {
+.workflow-step-badge {
+    align-self: flex-start;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
     background: var(--accent-color);
     color: white;
+    font-size: 0.85rem;
     font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.workflow-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.workflow-purpose,
+.workflow-use {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.workflow-prompt-box {
+    background: var(--bg-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    min-height: 120px;
+}
+
+.workflow-prompt-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.workflow-prompt-text {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.workflow-copy-btn {
+    margin-top: auto;
+    width: 100%;
+}
+
+.copy-btn.copied {
+    background: var(--secondary-color);
 }
 
 /* Contribute Section */
