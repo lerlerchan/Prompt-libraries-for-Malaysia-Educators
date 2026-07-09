@@ -127,14 +127,14 @@ function copyWorkflowPrompt(button) {
     const card = button.closest('.workflow-card');
 
     if (!card) {
-        showNotification('Unable to copy prompt right now.', 'error');
+        showNotification('Card element not found.', 'error');
         return;
     }
 
     const promptTextElement = card.querySelector('.workflow-prompt-text');
 
     if (!promptTextElement) {
-        showNotification('Unable to copy prompt right now.', 'error');
+        showNotification('Prompt text not found.', 'error');
         return;
     }
 
