@@ -125,7 +125,20 @@ function copyPrompt(button) {
 
 function copyWorkflowPrompt(button) {
     const card = button.closest('.workflow-card');
-    const promptText = card.querySelector('.workflow-prompt-text').textContent.trim();
+
+    if (!card) {
+        showNotification('Unable to copy prompt right now.', 'error');
+        return;
+    }
+
+    const promptTextElement = card.querySelector('.workflow-prompt-text');
+
+    if (!promptTextElement) {
+        showNotification('Unable to copy prompt right now.', 'error');
+        return;
+    }
+
+    const promptText = promptTextElement.textContent.trim();
     
     navigator.clipboard.writeText(promptText).then(() => {
         showNotification('Prompt copied to clipboard!');
