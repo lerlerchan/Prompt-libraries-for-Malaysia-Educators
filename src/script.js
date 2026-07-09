@@ -138,7 +138,7 @@ function copyWorkflowPrompt(button) {
         return;
     }
 
-    const promptText = promptTextElement.innerText.trim();
+    const promptText = promptTextElement.textContent.trim();
     
     navigator.clipboard.writeText(promptText).then(() => {
         showNotification('Prompt copied to clipboard!');
