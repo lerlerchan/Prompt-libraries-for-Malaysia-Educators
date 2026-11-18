@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Own Class Chatbot (Free) | Malaysian Teachers Prompt Library</title>
+    <meta name="description" content="Step-by-step guide for Malaysian teachers: build a simple AI chatbot like the Prompt Library assistant using Dify and a free NVIDIA Build API key. No coding needed.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Malaysian Teachers Prompt Library</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#categories">Prompts</a>
+                    <a href="index.html#about">About</a>
+                    <div class="nav-dropdown">
+                        <a href="references.html">References ▾</a>
+                        <div class="nav-dropdown-menu">
+                            <a href="references.html">📚 Resources</a>
+                            <a href="skills.html">🛠️ Skills &amp; Tools</a>
+                            <a href="chatbot-guide.html">🤖 Build Your Chatbot</a>
+                        </div>
+                    </div>
+                    <div class="language-selector">
+                        <span class="lang-label">Language:</span>
+                        <a href="chatbot-guide.html" class="lang-btn active">English</a>
+                        <a href="chatbot-guide-malay.html" class="lang-btn">Bahasa</a>
+                        <a href="chatbot-guide-chinese.html" class="lang-btn">中文</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="skills-hero">
+        <div class="container">
+            <h2>🤖 Build Your Own Class Chatbot — Free, in About 30 Minutes</h2>
+            <p class="hero-subtitle">Make a chatbot like the Prompt Library assistant, but answering from <em>your</em> notes: FAQ, rubrics, scheme of work. Uses Dify and a free NVIDIA Build API key. No coding.</p>
+            <div class="stats-chips">
+                <span class="stat-chip">No coding</span>
+                <span class="stat-chip">Free key</span>
+                <span class="stat-chip">Works on phones</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a> /
+            <a href="references.html">References</a> /
+            <span>Build Your Chatbot</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Before you start -->
+            <section class="references-section">
+                <h2>✅ Before You Start</h2>
+                <div class="reference-category">
+                    <p><strong>Dify</strong> is a free, no-code tool that turns your documents into a chatbot. <strong>NVIDIA Build</strong> gives you a free API key, which is the "brain" the chatbot uses to write answers. You need:</p>
+                    <ul>
+                        <li>An email address (to sign up for NVIDIA Build and Dify).</li>
+                        <li>1 to 3 files of <em>your own</em> notes (a short FAQ, a marking rubric, a scheme of work). Text, Word, PDF or Markdown all work.</li>
+                        <li>A laptop or computer for setup (the finished chatbot works on phones).</li>
+                    </ul>
+                    <div class="guide-callout warn">
+                        <strong>⚠️ Never upload student data.</strong> No names, IC numbers, marks, phone numbers or photos. Use general notes only, and follow your school's AI and PDPA policy.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 1 -->
+            <section class="references-section">
+                <h2>Step 1 — Get a free NVIDIA Build key (5 min)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Open build.nvidia.com and sign in</strong>
+                            Go to <a href="https://build.nvidia.com" target="_blank" rel="noopener">build.nvidia.com</a> and create a free account. NVIDIA may ask you to verify a phone number.</div></li>
+                        <li><div class="step-content"><strong>Pick a model</strong>
+                            Open the model list and choose a small, fast chat model. Open its page and click <em>View Code</em> (or "Get API Key"). Note the model ID shown after <code>model=</code>, for example <code>nvidia/nemotron-3.5-bolt-e4b</code>. Model names change over time, so always copy the ID from the page.</div></li>
+                        <li><div class="step-content"><strong>Generate and copy your API key</strong>
+                            Click <em>Generate API Key</em>. It starts with <code>nvapi-</code> and is shown only once. Paste it into a private note. <strong>Never put this key in a web page, a chat or a screenshot.</strong></div></li>
+                    </ol>
+                    <div class="guide-callout">
+                        <strong>💡 Limits:</strong> the free tier has a request limit and may change. Check the current limits on <a href="https://build.nvidia.com" target="_blank" rel="noopener">build.nvidia.com</a> before you share your chatbot with a whole school.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section class="references-section">
+                <h2>Step 2 — Create your Dify account and connect NVIDIA (10 min)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Sign up for Dify Cloud</strong>
+                            Go to <a href="https://cloud.dify.ai" target="_blank" rel="noopener">cloud.dify.ai</a> and sign up with your email or Google account. The free plan is enough to try this. See the <a href="https://dify.ai/pricing" target="_blank" rel="noopener">current plan limits</a>.</div></li>
+                        <li><div class="step-content"><strong>Install the "OpenAI-API-compatible" plugin</strong>
+                            Open <em>Plugins</em> (top right), search for <code>OpenAI-API-compatible</code> and click <em>Install</em>. This lets Dify talk to any service that works like OpenAI, including NVIDIA.</div></li>
+                        <li><div class="step-content"><strong>Add the NVIDIA model</strong>
+                            Click your profile picture, then <em>Settings</em>, then <em>Model Provider</em>. Under OpenAI-API-compatible choose <em>Add Model</em> and fill in the table below. Labels may look slightly different in your version.</div></li>
+                    </ol>
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>Field</th><th>Value</th></tr></thead>
+                        <tbody>
+                            <tr><td>Model Type</td><td>LLM</td></tr>
+                            <tr><td>Model Name</td><td>the ID from Step 1, e.g. <code>nvidia/nemotron-3.5-bolt-e4b</code></td></tr>
+                            <tr><td>API Key</td><td>your <code>nvapi-…</code> key</td></tr>
+                            <tr><td>API endpoint URL</td><td><code>https://integrate.api.nvidia.com/v1</code> (stop at <code>/v1</code>, do not add <code>/chat/completions</code>)</td></tr>
+                            <tr><td>Completion mode</td><td>Chat</td></tr>
+                            <tr><td>Model context size</td><td><code>32000</code></td></tr>
+                            <tr><td>Upper bound for max tokens</td><td><code>1200</code></td></tr>
+                            <tr><td>Function calling / Vision</td><td>Not supported / No</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <p>Click <em>Save</em>. If Dify shows an error, see the troubleshooting table at the bottom.</p>
+                </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section class="references-section">
+                <h2>Step 3 — Give the chatbot your notes (5 min)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Create a Knowledge base</strong>
+                            Open <em>Knowledge</em>, click <em>Create Knowledge</em>, and upload your files.</div></li>
+                        <li><div class="step-content"><strong>Choose the indexing settings</strong>
+                            Pick <em>Economy</em> (keyword search). It is free and needs no extra model. Keep the default chunk settings.</div></li>
+                        <li><div class="step-content"><strong>Write your notes in small sections</strong>
+                            The chatbot finds one section at a time. Use short headings, one topic per section, for example <code>## How to submit homework</code> followed by 3 to 5 lines. Clear notes give clear answers.</div></li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Step 4 -->
+            <section class="references-section">
+                <h2>Step 4 — Create the chatbot (5 min)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Create the app</strong>
+                            Go to <em>Studio</em>, click <em>Create from Blank</em>, choose <em>Chatbot</em>, and name it (e.g. "Form 4 Science Helper").</div></li>
+                        <li><div class="step-content"><strong>Choose your model</strong>
+                            At the top right, select the NVIDIA model you added. Set <em>Temperature</em> to <code>0.3</code> (calmer, fewer made-up answers) and <em>Max tokens</em> to <code>1200</code>. Some models "think" first, and a low limit can give empty replies.</div></li>
+                        <li><div class="step-content"><strong>Attach your Knowledge</strong>
+                            Under <em>Context</em>, click <em>Add</em> and choose the Knowledge base from Step 3. Set <em>Top K</em> to <code>4</code>.</div></li>
+                        <li><div class="step-content"><strong>Paste the instructions</strong>
+                            Copy the template below into the <em>Instructions</em> box and fill in the [brackets].</div></li>
+                    </ol>
+                    <p><strong>Settings at a glance</strong></p>
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>Setting</th><th>Value</th><th>Why</th></tr></thead>
+                        <tbody>
+                            <tr><td>Temperature</td><td><code>0.3</code></td><td>Calmer answers, fewer made-up details</td></tr>
+                            <tr><td>Max tokens</td><td><code>1200</code> or more</td><td>Some models think first; a low limit gives empty replies</td></tr>
+                            <tr><td>Knowledge index</td><td>Economy (keyword)</td><td>Free, needs no extra model</td></tr>
+                            <tr><td>Top K (sections retrieved)</td><td><code>4</code></td><td>Enough context without confusing a small model</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+<pre class="guide-pre">You are the class assistant for [SCHOOL / CLASS / SUBJECT].
+Answer ONLY using the retrieved context (my notes).
+If the answer is not in the context, say: "I can't find this in my notes. Please ask your teacher."
+- Reply in the language of the student's latest message (English, Bahasa Melayu or 中文).
+- Keep answers under 150 words, in simple words suitable for [Form / Year].
+- Never invent facts, dates, marks or rules.
+- If asked about something unrelated to [SUBJECT], reply politely: "I can only help with [SUBJECT] questions."
+- Never ask for or store personal data (name, IC number, phone number).</pre>
+                    <div class="guide-callout">
+                        <strong>💡 Why "ANSWER ONLY from my notes"?</strong> Small free models are good at quoting your notes but can guess when asked general facts. This one rule prevents most wrong answers.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 5 -->
+            <section class="references-section">
+                <h2>Step 5 — Test it with 5 questions (5 min)</h2>
+                <div class="reference-category">
+                    <p>Use the preview panel on the right and ask:</p>
+                    <ol>
+                        <li>A question your notes answer clearly.</li>
+                        <li>The same question in Bahasa Melayu (or 中文). The reply should be in that language.</li>
+                        <li>A question your notes do <strong>not</strong> answer. It should say it can't find it.</li>
+                        <li>An unrelated question ("What is the capital of France?"). It should politely refuse.</li>
+                        <li>A question using different words from your notes. If it fails, add those words to your notes.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Step 6 -->
+            <section class="references-section">
+                <h2>Step 6 — Share it</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Publish</strong>
+                            Click <em>Publish</em>, then <em>Update</em>. Every change to your notes or instructions needs a new publish.</div></li>
+                        <li><div class="step-content"><strong>Share a link (easiest)</strong>
+                            Choose <em>Run App</em> and copy the web address. Send it to your class by WhatsApp or Google Classroom. It works on phones.</div></li>
+                        <li><div class="step-content"><strong>Or add a chat bubble to a web page</strong>
+                            Choose <em>Embed Into Site</em> and copy the code into your Google Site, Blogger or school page, just before the end of the page. This is how the Prompt Library assistant works.</div></li>
+                    </ol>
+                    <div class="guide-callout warn">
+                        <strong>🔒 Safety checklist</strong>
+                        <ul>
+                            <li>Your <code>nvapi-</code> key stays inside Dify. It is never part of the embed code.</li>
+                            <li>The link and bubble code are public: anyone who has them can chat and use up your free quota. Share it with your class only.</li>
+                            <li>AI can be wrong. Check important answers (dates, marks, rules) against your notes.</li>
+                            <li>If a key is ever pasted in a chat or page by mistake, delete it on build.nvidia.com and make a new one.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section class="references-section">
+                <h2>🛠️ Troubleshooting</h2>
+                <div class="reference-category">
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>What you see</th><th>Likely cause and fix</th></tr></thead>
+                        <tbody>
+                            <tr><td>"404 page not found" when saving the model</td><td>Wrong endpoint URL. Use exactly <code>https://integrate.api.nvidia.com/v1</code>.</td></tr>
+                            <tr><td>"Model not found" or 404 on the model name</td><td>The model ID is mistyped or has been renamed. Copy it again from the model page on build.nvidia.com.</td></tr>
+                            <tr><td>401 or 403 error</td><td>The API key is wrong or expired. Make a new <code>nvapi-</code> key.</td></tr>
+                            <tr><td>429 "too many requests"</td><td>Free limit reached. Wait a minute and try again, or share the bot with fewer people.</td></tr>
+                            <tr><td>Empty reply</td><td>Max tokens too low. Set it to <code>1200</code> or more.</td></tr>
+                            <tr><td>Replies in the wrong language</td><td>Keep the line "Reply in the language of the student's latest message" in the instructions.</td></tr>
+                            <tr><td>"I can't find this" for things in your notes</td><td>Add the words students actually use as headings, and keep each section short.</td></tr>
+                            <tr><td>Can't install the plugin on the free plan</td><td>Check Dify's current plan page. As a backup you can run Dify on your own computer, see below.</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appendix -->
+            <section class="references-section">
+                <h2>💻 Backup: run Dify on your own computer</h2>
+                <div class="reference-category">
+                    <p>Dify is open source. If Dify Cloud does not fit your needs, you can run it with Docker on your own computer, fully free and private. It takes about 30 minutes and some comfort with the command line, so ask your school IT teacher to help. Follow the official guide at <a href="https://docs.dify.ai" target="_blank" rel="noopener">docs.dify.ai</a>. Steps 1 to 6 above stay the same.</p>
+                </div>
+            </section>
+
+            <!-- Part 2 -->
+            <section class="references-section">
+                <h2>🔜 Coming next: automate school admin with n8n</h2>
+                <div class="reference-category">
+                    <p>Part 2 will show how to connect the same free NVIDIA key to n8n to draft parent letters, summarise forms and send emails automatically.</p>
+                    <p><a href="index.html" class="btn-primary">← Back to the Prompt Library</a></p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Malaysian Teachers Prompt Library</p>
+                    <p class="footer-note">Built with ❤️ for Malaysian educators</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/lerlerchan/Prompt-libraries-for-Malaysia-Educators" target="_blank">
+                        <i class="fab fa-github"></i> Open Source on GitHub
+                    </a>
+                    <span class="separator">|</span>
+                    <a href="index.html#contribute">Contribute</a>
+                    <span class="separator">|</span>
+                    <a href="references.html">References</a>
+                    <span class="separator">|</span>
+                    <a href="mailto:lkchan@sc.edu.my">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1597,3 +1597,38 @@ h3[style*="margin: 2rem"] {
         grid-template-columns: 1fr;
     }
 }
+/* Chatbot guide pages */
+.guide-pre {
+    background: var(--bg-color);
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.guide-callout {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border-left: 4px solid #059669;
+}
+.guide-callout.warn { border-left-color: #d97706; }
+.guide-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+.guide-table th, .guide-table td {
+    text-align: left;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+}
+.guide-table td code { word-break: break-all; }
+.guide-table-wrap { overflow-x: auto; }

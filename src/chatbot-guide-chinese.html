@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自建班级聊天机器人（免费）| Malaysian Teachers Prompt Library</title>
+    <meta name="description" content="马来西亚教师分步指南：用 Dify 和免费的 NVIDIA Build API 密钥，做一个像 Prompt Library 助手那样的简单 AI 聊天机器人。无需编程。">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Malaysian Teachers Prompt Library</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#categories">Prompts</a>
+                    <a href="index.html#about">About</a>
+                    <div class="nav-dropdown">
+                        <a href="references.html">References ▾</a>
+                        <div class="nav-dropdown-menu">
+                            <a href="references.html">📚 参考资源</a>
+                            <a href="skills.html">🛠️ 技能与工具</a>
+                            <a href="chatbot-guide-chinese.html">🤖 自建聊天机器人</a>
+                        </div>
+                    </div>
+                    <div class="language-selector">
+                        <span class="lang-label">Language:</span>
+                        <a href="chatbot-guide.html" class="lang-btn">English</a>
+                        <a href="chatbot-guide-malay.html" class="lang-btn">Bahasa</a>
+                        <a href="chatbot-guide-chinese.html" class="lang-btn active">中文</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="skills-hero">
+        <div class="container">
+            <h2>🤖 自建班级聊天机器人：免费，约 30 分钟</h2>
+            <p class="hero-subtitle">做一个像 Prompt Library 助手那样的聊天机器人，但回答的是<em>你自己</em>的资料：常见问题、评分标准、教学进度。使用 Dify 和免费的 NVIDIA Build API 密钥，无需编程。</p>
+            <div class="stats-chips">
+                <span class="stat-chip">无需编程</span>
+                <span class="stat-chip">免费密钥</span>
+                <span class="stat-chip">手机可用</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> 主页</a> /
+            <a href="references.html">参考资源</a> /
+            <span>自建聊天机器人</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Before you start -->
+            <section class="references-section">
+                <h2>✅ 开始之前</h2>
+                <div class="reference-category">
+                    <p><strong>Dify</strong> 是一个免费的无代码工具，可以把你的文件变成聊天机器人。<strong>NVIDIA Build</strong> 提供免费的 API 密钥，也就是机器人用来写答案的“大脑”。你需要准备：</p>
+                    <ul>
+                        <li>一个电子邮箱（用来注册 NVIDIA Build 和 Dify）。</li>
+                        <li>1 到 3 份<em>你自己的</em>资料（简短的常见问题、评分标准、教学进度）。文本、Word、PDF 或 Markdown 都可以。</li>
+                        <li>一台电脑用于设置（做好的机器人可以在手机上使用）。</li>
+                    </ul>
+                    <div class="guide-callout warn">
+                        <strong>⚠️ 绝对不要上传学生资料。</strong>不要放姓名、身份证号码、成绩、电话号码或照片。只用一般性的资料，并遵守学校的 AI 与个人资料保护（PDPA）规定。
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 1 -->
+            <section class="references-section">
+                <h2>第 1 步：获取免费的 NVIDIA Build 密钥（5 分钟）</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>打开 build.nvidia.com 并登录</strong>
+                            前往 <a href="https://build.nvidia.com" target="_blank" rel="noopener">build.nvidia.com</a> 创建免费账号。NVIDIA 可能会要求验证手机号码。</div></li>
+                        <li><div class="step-content"><strong>选择模型</strong>
+                            打开模型列表，选一个小而快的对话模型。进入它的页面，点击 <em>View Code</em>（或 “Get API Key”）。记下 <code>model=</code> 后面的模型 ID，例如 <code>nvidia/nemotron-3.5-bolt-e4b</code>。模型名称会随时间变化，所以请务必从页面上复制 ID。</div></li>
+                        <li><div class="step-content"><strong>生成并复制你的 API 密钥</strong>
+                            点击 <em>Generate API Key</em>。密钥以 <code>nvapi-</code> 开头，只显示一次。请贴到私人笔记里。<strong>不要把密钥放进网页、聊天窗口或截图。</strong></div></li>
+                    </ol>
+                    <div class="guide-callout">
+                        <strong>💡 使用限额：</strong>免费方案有请求次数限制，而且可能会变动。在与全校分享机器人之前，请先到 <a href="https://build.nvidia.com" target="_blank" rel="noopener">build.nvidia.com</a> 查看最新限额。
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section class="references-section">
+                <h2>第 2 步：注册 Dify 并连接 NVIDIA（10 分钟）</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>注册 Dify Cloud</strong>
+                            前往 <a href="https://cloud.dify.ai" target="_blank" rel="noopener">cloud.dify.ai</a>，用邮箱或 Google 账号注册。免费方案足够试用。请查看<a href="https://dify.ai/pricing" target="_blank" rel="noopener">最新方案限额</a>。</div></li>
+                        <li><div class="step-content"><strong>安装 “OpenAI-API-compatible” 插件</strong>
+                            打开右上角的 <em>Plugins</em>，搜索 <code>OpenAI-API-compatible</code>，点击 <em>Install</em>。这个插件让 Dify 能连接任何兼容 OpenAI 的服务，包括 NVIDIA。</div></li>
+                        <li><div class="step-content"><strong>添加 NVIDIA 模型</strong>
+                            点击头像，选择 <em>Settings</em>，再选 <em>Model Provider</em>。在 OpenAI-API-compatible 下选择 <em>Add Model</em>，按下表填写。不同版本的标签可能略有差异。</div></li>
+                    </ol>
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>字段</th><th>填写内容</th></tr></thead>
+                        <tbody>
+                            <tr><td>Model Type</td><td>LLM</td></tr>
+                            <tr><td>Model Name</td><td>第 1 步的模型 ID，例如 <code>nvidia/nemotron-3.5-bolt-e4b</code></td></tr>
+                            <tr><td>API Key</td><td>你的 <code>nvapi-…</code> 密钥</td></tr>
+                            <tr><td>API endpoint URL</td><td><code>https://integrate.api.nvidia.com/v1</code>（到 <code>/v1</code> 为止，不要加 <code>/chat/completions</code>）</td></tr>
+                            <tr><td>Completion mode</td><td>Chat</td></tr>
+                            <tr><td>Model context size</td><td><code>32000</code></td></tr>
+                            <tr><td>Upper bound for max tokens</td><td><code>1200</code></td></tr>
+                            <tr><td>Function calling / Vision</td><td>Not supported / No</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <p>点击 <em>Save</em>。如果 Dify 显示错误，请看页面底部的故障排除表。</p>
+                </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section class="references-section">
+                <h2>第 3 步：把你的资料交给机器人（5 分钟）</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>创建 Knowledge（知识库）</strong>
+                            打开 <em>Knowledge</em>，点击 <em>Create Knowledge</em>，上传你的文件。</div></li>
+                        <li><div class="step-content"><strong>选择索引设置</strong>
+                            选 <em>Economy</em>（关键词搜索）。它免费，也不需要额外的模型。分段设置保持默认即可。</div></li>
+                        <li><div class="step-content"><strong>把资料写成小段落</strong>
+                            机器人一次只会找出一个段落。请用简短的标题，一个主题一段，例如 <code>## 如何提交作业</code>，后面跟 3 到 5 行。资料清楚，答案才清楚。</div></li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Step 4 -->
+            <section class="references-section">
+                <h2>第 4 步：创建聊天机器人（5 分钟）</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>创建应用</strong>
+                            进入 <em>Studio</em>，点击 <em>Create from Blank</em>，选择 <em>Chatbot</em>，并取个名字（例如“中四科学小助手”）。</div></li>
+                        <li><div class="step-content"><strong>选择模型</strong>
+                            在右上角选择你刚添加的 NVIDIA 模型。把 <em>Temperature</em> 设为 <code>0.3</code>（更稳定，较少编造），<em>Max tokens</em> 设为 <code>1200</code>。有些模型会先“思考”，上限太低会导致回复为空。</div></li>
+                        <li><div class="step-content"><strong>连接你的知识库</strong>
+                            在 <em>Context</em> 下点击 <em>Add</em>，选择第 3 步做好的知识库，并把 <em>Top K</em> 设为 <code>4</code>。</div></li>
+                        <li><div class="step-content"><strong>贴上指令</strong>
+                            把下面的模板复制到 <em>Instructions</em> 框里，并填写【括号】中的内容。</div></li>
+                    </ol>
+                    <p><strong>设置一览</strong></p>
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>设置</th><th>数值</th><th>原因</th></tr></thead>
+                        <tbody>
+                            <tr><td>Temperature</td><td><code>0.3</code></td><td>回答更稳定，较少编造细节</td></tr>
+                            <tr><td>Max tokens</td><td><code>1200</code> 或更高</td><td>有些模型会先思考，上限太低会回复为空</td></tr>
+                            <tr><td>知识库索引</td><td>Economy（关键词）</td><td>免费，不需要额外模型</td></tr>
+                            <tr><td>Top K（取回段落数）</td><td><code>4</code></td><td>提供足够上下文，又不会让小模型混乱</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+<pre class="guide-pre">你是【学校 / 班级 / 科目】的班级助手。
+只能根据检索到的内容（我的资料）回答。
+如果资料里没有答案，请说：“我在老师的资料里找不到这个，请询问你的老师。”
+- 用学生最新一条消息所使用的语言回复（中文、Bahasa Melayu 或 English）。
+- 回答不超过 150 字，用适合【中几 / 几年级】的简单语言。
+- 绝对不要编造事实、日期、成绩或规定。
+- 如果问题与【科目】无关，请礼貌地回复：“我只能回答【科目】的问题。”
+- 不要索取或储存个人资料（姓名、身份证号码、电话号码）。</pre>
+                    <div class="guide-callout">
+                        <strong>💡 为什么要写“只能根据我的资料回答”？</strong>免费的小模型擅长引用你的资料，但被问到一般常识时可能会乱猜。这一条规则就能避免大部分错误答案。
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 5 -->
+            <section class="references-section">
+                <h2>第 5 步：用 5 个问题测试（5 分钟）</h2>
+                <div class="reference-category">
+                    <p>使用右侧的预览面板，依次提问：</p>
+                    <ol>
+                        <li>一个你的资料里有清楚答案的问题。</li>
+                        <li>用 English（或 Bahasa Melayu）问同一个问题。回复应该使用该语言。</li>
+                        <li>一个你的资料里<strong>没有</strong>答案的问题。它应该回答找不到。</li>
+                        <li>一个无关的问题（“法国的首都是哪里？”）。它应该礼貌地拒绝。</li>
+                        <li>用和资料不同的说法提问。如果答不出来，就把这些说法加进资料里。</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Step 6 -->
+            <section class="references-section">
+                <h2>第 6 步：分享给学生</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>发布（Publish）</strong>
+                            点击 <em>Publish</em>，再点 <em>Update</em>。每次修改资料或指令之后，都要重新发布。</div></li>
+                        <li><div class="step-content"><strong>分享链接（最简单）</strong>
+                            选择 <em>Run App</em> 并复制网址，通过 WhatsApp 或 Google Classroom 发给全班。手机上也能使用。</div></li>
+                        <li><div class="step-content"><strong>或在网页上加一个聊天气泡</strong>
+                            选择 <em>Embed Into Site</em>，把代码复制到你的 Google Site、Blogger 或学校网页中，放在页面结尾之前。Prompt Library 的助手就是这样运作的。</div></li>
+                    </ol>
+                    <div class="guide-callout warn">
+                        <strong>🔒 安全检查清单</strong>
+                        <ul>
+                            <li>你的 <code>nvapi-</code> 密钥只保存在 Dify 里，不会出现在嵌入代码中。</li>
+                            <li>链接和气泡代码是公开的：任何拿到的人都可以聊天，并用掉你的免费额度。只分享给你的班级。</li>
+                            <li>AI 可能出错。重要的答案（日期、成绩、规定）请对照你的资料核实。</li>
+                            <li>如果不小心把密钥贴到聊天或网页上，请立刻到 build.nvidia.com 删除并重新生成。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section class="references-section">
+                <h2>🛠️ 故障排除</h2>
+                <div class="reference-category">
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>你看到的情况</th><th>可能原因与解决办法</th></tr></thead>
+                        <tbody>
+                            <tr><td>保存模型时出现 “404 page not found”</td><td>endpoint 网址错误。请完全使用 <code>https://integrate.api.nvidia.com/v1</code>。</td></tr>
+                            <tr><td>模型名称出现 “Model not found” 或 404</td><td>模型 ID 打错或已被改名。请重新从 build.nvidia.com 的模型页面复制。</td></tr>
+                            <tr><td>出现 401 或 403 错误</td><td>API 密钥错误或已失效。请重新生成 <code>nvapi-</code> 密钥。</td></tr>
+                            <tr><td>429 “too many requests”</td><td>已达免费上限。等一分钟再试，或减少使用的人数。</td></tr>
+                            <tr><td>回复为空</td><td>Max tokens 太低。请设为 <code>1200</code> 或更高。</td></tr>
+                            <tr><td>回复语言不对</td><td>请在指令中保留“用学生最新一条消息所使用的语言回复”这一行。</td></tr>
+                            <tr><td>资料里明明有，却回答“找不到”</td><td>把学生实际会用的词语写进标题，并让每个段落保持简短。</td></tr>
+                            <tr><td>免费方案无法安装插件</td><td>查看 Dify 最新的方案页面。也可以先在自己的电脑上运行 Dify，见下方。</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appendix -->
+            <section class="references-section">
+                <h2>💻 备用方案：在自己的电脑上运行 Dify</h2>
+                <div class="reference-category">
+                    <p>Dify 是开源软件。如果 Dify Cloud 不适合你，可以用 Docker 在自己的电脑上运行，完全免费且更私密。大约需要 30 分钟，并需要一些命令行基础，建议请学校的 ICT 老师协助。请按照 <a href="https://docs.dify.ai" target="_blank" rel="noopener">docs.dify.ai</a> 的官方指南操作。上面的第 1 至第 6 步保持不变。</p>
+                </div>
+            </section>
+
+            <!-- Part 2 -->
+            <section class="references-section">
+                <h2>🔜 即将推出：用 n8n 自动化学校行政工作</h2>
+                <div class="reference-category">
+                    <p>第 2 部分将介绍如何把同一个免费的 NVIDIA 密钥接到 n8n，用来自动起草家长信、整理表格内容并发送电子邮件。</p>
+                    <p><a href="chinese.html" class="btn-primary">← 返回提示词库</a></p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Malaysian Teachers Prompt Library</p>
+                    <p class="footer-note">为马来西亚教育工作者用心打造 ❤️</p>
+                </div>
+                <div class="footer-right">
+                    <a href="chinese.html">返回主页</a>
+                    <span class="separator">|</span>
+                    <a href="references.html">资源引用</a>
+                    <span class="separator">|</span>
+                    <a href="https://github.com/lerlerchan/Prompt-libraries-for-Malaysia-Educators" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

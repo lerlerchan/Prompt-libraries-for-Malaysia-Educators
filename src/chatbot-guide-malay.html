@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bina Chatbot Kelas Sendiri (Percuma) | Malaysian Teachers Prompt Library</title>
+    <meta name="description" content="Panduan langkah demi langkah untuk guru Malaysia: bina chatbot AI ringkas seperti pembantu Prompt Library menggunakan Dify dan kunci API NVIDIA Build percuma. Tanpa pengekodan.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Malaysian Teachers Prompt Library</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#categories">Prompts</a>
+                    <a href="index.html#about">About</a>
+                    <div class="nav-dropdown">
+                        <a href="references.html">References ▾</a>
+                        <div class="nav-dropdown-menu">
+                            <a href="references.html">📚 Rujukan</a>
+                            <a href="skills.html">🛠️ Kemahiran &amp; Alat</a>
+                            <a href="chatbot-guide-malay.html">🤖 Bina Chatbot Anda</a>
+                        </div>
+                    </div>
+                    <div class="language-selector">
+                        <span class="lang-label">Language:</span>
+                        <a href="chatbot-guide.html" class="lang-btn">English</a>
+                        <a href="chatbot-guide-malay.html" class="lang-btn active">Bahasa</a>
+                        <a href="chatbot-guide-chinese.html" class="lang-btn">中文</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="skills-hero">
+        <div class="container">
+            <h2>🤖 Bina Chatbot Kelas Anda Sendiri — Percuma, Kira-kira 30 Minit</h2>
+            <p class="hero-subtitle">Bina chatbot seperti pembantu Prompt Library, tetapi menjawab daripada nota <em>anda</em>: soalan lazim, rubrik, rancangan pengajaran. Menggunakan Dify dan kunci API NVIDIA Build percuma. Tanpa pengekodan.</p>
+            <div class="stats-chips">
+                <span class="stat-chip">Tanpa pengekodan</span>
+                <span class="stat-chip">Kunci percuma</span>
+                <span class="stat-chip">Boleh guna di telefon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html"><i class="fas fa-home"></i> Laman Utama</a> /
+            <a href="references.html">Rujukan</a> /
+            <span>Bina Chatbot Anda</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Before you start -->
+            <section class="references-section">
+                <h2>✅ Sebelum Bermula</h2>
+                <div class="reference-category">
+                    <p><strong>Dify</strong> ialah alat percuma tanpa kod yang menukar dokumen anda menjadi chatbot. <strong>NVIDIA Build</strong> memberi kunci API percuma, iaitu "otak" yang digunakan chatbot untuk menulis jawapan. Anda memerlukan:</p>
+                    <ul>
+                        <li>Alamat e-mel (untuk mendaftar NVIDIA Build dan Dify).</li>
+                        <li>1 hingga 3 fail nota <em>anda sendiri</em> (soalan lazim ringkas, rubrik pemarkahan, rancangan pengajaran). Teks, Word, PDF atau Markdown semuanya boleh.</li>
+                        <li>Komputer atau komputer riba untuk persediaan (chatbot yang siap boleh digunakan di telefon).</li>
+                    </ul>
+                    <div class="guide-callout warn">
+                        <strong>⚠️ Jangan sekali-kali muat naik data murid.</strong> Tiada nama, nombor kad pengenalan, markah, nombor telefon atau gambar. Gunakan nota umum sahaja dan patuhi dasar AI dan PDPA sekolah anda.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 1 -->
+            <section class="references-section">
+                <h2>Langkah 1 — Dapatkan kunci NVIDIA Build percuma (5 minit)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Buka build.nvidia.com dan log masuk</strong>
+                            Pergi ke <a href="https://build.nvidia.com" target="_blank" rel="noopener">build.nvidia.com</a> dan buat akaun percuma. NVIDIA mungkin meminta anda mengesahkan nombor telefon.</div></li>
+                        <li><div class="step-content"><strong>Pilih model</strong>
+                            Buka senarai model dan pilih model sembang yang kecil dan pantas. Buka halamannya dan klik <em>View Code</em> (atau "Get API Key"). Catat ID model selepas <code>model=</code>, contohnya <code>nvidia/nemotron-3.5-bolt-e4b</code>. Nama model berubah dari semasa ke semasa, jadi sentiasa salin ID daripada halaman tersebut.</div></li>
+                        <li><div class="step-content"><strong>Jana dan salin kunci API anda</strong>
+                            Klik <em>Generate API Key</em>. Kunci bermula dengan <code>nvapi-</code> dan hanya dipaparkan sekali. Tampalkan ke dalam nota peribadi. <strong>Jangan letakkan kunci ini dalam laman web, sembang atau tangkapan skrin.</strong></div></li>
+                    </ol>
+                    <div class="guide-callout">
+                        <strong>💡 Had penggunaan:</strong> pelan percuma mempunyai had permintaan dan boleh berubah. Semak had terkini di <a href="https://build.nvidia.com" target="_blank" rel="noopener">build.nvidia.com</a> sebelum anda berkongsi chatbot dengan seluruh sekolah.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2 -->
+            <section class="references-section">
+                <h2>Langkah 2 — Buat akaun Dify dan sambung NVIDIA (10 minit)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Daftar Dify Cloud</strong>
+                            Pergi ke <a href="https://cloud.dify.ai" target="_blank" rel="noopener">cloud.dify.ai</a> dan daftar dengan e-mel atau akaun Google. Pelan percuma mencukupi untuk mencuba. Lihat <a href="https://dify.ai/pricing" target="_blank" rel="noopener">had pelan terkini</a>.</div></li>
+                        <li><div class="step-content"><strong>Pasang plugin "OpenAI-API-compatible"</strong>
+                            Buka <em>Plugins</em> (kanan atas), cari <code>OpenAI-API-compatible</code> dan klik <em>Install</em>. Plugin ini membolehkan Dify berhubung dengan mana-mana perkhidmatan yang berfungsi seperti OpenAI, termasuk NVIDIA.</div></li>
+                        <li><div class="step-content"><strong>Tambah model NVIDIA</strong>
+                            Klik gambar profil anda, kemudian <em>Settings</em>, kemudian <em>Model Provider</em>. Di bawah OpenAI-API-compatible pilih <em>Add Model</em> dan isi jadual di bawah. Label mungkin sedikit berbeza dalam versi anda.</div></li>
+                    </ol>
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>Medan</th><th>Nilai</th></tr></thead>
+                        <tbody>
+                            <tr><td>Model Type</td><td>LLM</td></tr>
+                            <tr><td>Model Name</td><td>ID daripada Langkah 1, cth. <code>nvidia/nemotron-3.5-bolt-e4b</code></td></tr>
+                            <tr><td>API Key</td><td>kunci <code>nvapi-…</code> anda</td></tr>
+                            <tr><td>API endpoint URL</td><td><code>https://integrate.api.nvidia.com/v1</code> (berhenti pada <code>/v1</code>, jangan tambah <code>/chat/completions</code>)</td></tr>
+                            <tr><td>Completion mode</td><td>Chat</td></tr>
+                            <tr><td>Model context size</td><td><code>32000</code></td></tr>
+                            <tr><td>Upper bound for max tokens</td><td><code>1200</code></td></tr>
+                            <tr><td>Function calling / Vision</td><td>Not supported / No</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <p>Klik <em>Save</em>. Jika Dify menunjukkan ralat, lihat jadual penyelesaian masalah di bahagian bawah.</p>
+                </div>
+            </section>
+
+            <!-- Step 3 -->
+            <section class="references-section">
+                <h2>Langkah 3 — Beri nota anda kepada chatbot (5 minit)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Buat Knowledge base</strong>
+                            Buka <em>Knowledge</em>, klik <em>Create Knowledge</em>, dan muat naik fail anda.</div></li>
+                        <li><div class="step-content"><strong>Pilih tetapan indeks</strong>
+                            Pilih <em>Economy</em> (carian kata kunci). Ia percuma dan tidak memerlukan model tambahan. Kekalkan tetapan chunk lalai.</div></li>
+                        <li><div class="step-content"><strong>Tulis nota dalam bahagian kecil</strong>
+                            Chatbot mencari satu bahagian pada satu masa. Gunakan tajuk pendek, satu topik setiap bahagian, contohnya <code>## Cara hantar kerja rumah</code> diikuti 3 hingga 5 baris. Nota yang jelas memberi jawapan yang jelas.</div></li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Step 4 -->
+            <section class="references-section">
+                <h2>Langkah 4 — Bina chatbot (5 minit)</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Cipta aplikasi</strong>
+                            Pergi ke <em>Studio</em>, klik <em>Create from Blank</em>, pilih <em>Chatbot</em>, dan namakan (cth. "Pembantu Sains Tingkatan 4").</div></li>
+                        <li><div class="step-content"><strong>Pilih model anda</strong>
+                            Di kanan atas, pilih model NVIDIA yang anda tambah. Tetapkan <em>Temperature</em> kepada <code>0.3</code> (lebih tenang, kurang jawapan rekaan) dan <em>Max tokens</em> kepada <code>1200</code>. Sesetengah model "berfikir" dahulu, dan had yang rendah boleh menghasilkan jawapan kosong.</div></li>
+                        <li><div class="step-content"><strong>Lampirkan Knowledge anda</strong>
+                            Di bawah <em>Context</em>, klik <em>Add</em> dan pilih Knowledge base daripada Langkah 3. Tetapkan <em>Top K</em> kepada <code>4</code>.</div></li>
+                        <li><div class="step-content"><strong>Tampal arahan</strong>
+                            Salin templat di bawah ke dalam kotak <em>Instructions</em> dan isi bahagian dalam [kurungan].</div></li>
+                    </ol>
+                    <p><strong>Tetapan sepintas lalu</strong></p>
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>Tetapan</th><th>Nilai</th><th>Sebab</th></tr></thead>
+                        <tbody>
+                            <tr><td>Temperature</td><td><code>0.3</code></td><td>Jawapan lebih tenang, kurang butiran rekaan</td></tr>
+                            <tr><td>Max tokens</td><td><code>1200</code> atau lebih</td><td>Sesetengah model berfikir dahulu; had rendah memberi jawapan kosong</td></tr>
+                            <tr><td>Indeks Knowledge</td><td>Economy (kata kunci)</td><td>Percuma, tidak perlu model tambahan</td></tr>
+                            <tr><td>Top K (bahagian diambil)</td><td><code>4</code></td><td>Konteks mencukupi tanpa mengelirukan model kecil</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+<pre class="guide-pre">Anda ialah pembantu kelas untuk [SEKOLAH / KELAS / MATA PELAJARAN].
+Jawab HANYA menggunakan konteks yang diambil (nota saya).
+Jika jawapan tiada dalam konteks, katakan: "Saya tidak jumpa perkara ini dalam nota saya. Sila tanya cikgu anda."
+- Balas dalam bahasa mesej terkini murid (Bahasa Melayu, English atau 中文).
+- Jawapan kurang daripada 150 patah perkataan, dalam bahasa mudah yang sesuai untuk [Tingkatan / Tahun].
+- Jangan sekali-kali mereka fakta, tarikh, markah atau peraturan.
+- Jika ditanya perkara yang tiada kaitan dengan [MATA PELAJARAN], balas dengan sopan: "Saya hanya boleh membantu soalan [MATA PELAJARAN]."
+- Jangan minta atau simpan data peribadi (nama, nombor kad pengenalan, nombor telefon).</pre>
+                    <div class="guide-callout">
+                        <strong>💡 Mengapa "Jawab HANYA daripada nota saya"?</strong> Model percuma yang kecil pandai memetik nota anda tetapi boleh meneka apabila ditanya fakta umum. Satu peraturan ini mencegah kebanyakan jawapan salah.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 5 -->
+            <section class="references-section">
+                <h2>Langkah 5 — Uji dengan 5 soalan (5 minit)</h2>
+                <div class="reference-category">
+                    <p>Gunakan panel pratonton di sebelah kanan dan tanya:</p>
+                    <ol>
+                        <li>Soalan yang nota anda jawab dengan jelas.</li>
+                        <li>Soalan yang sama dalam English (atau 中文). Jawapan patut dalam bahasa itu.</li>
+                        <li>Soalan yang nota anda <strong>tidak</strong> jawab. Ia patut berkata tidak jumpa.</li>
+                        <li>Soalan yang tiada kaitan ("Apakah ibu negara Perancis?"). Ia patut menolak dengan sopan.</li>
+                        <li>Soalan dengan perkataan berbeza daripada nota anda. Jika gagal, tambah perkataan itu ke dalam nota anda.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Step 6 -->
+            <section class="references-section">
+                <h2>Langkah 6 — Kongsikan</h2>
+                <div class="reference-category">
+                    <ol class="tool-workflow-steps">
+                        <li><div class="step-content"><strong>Publish</strong>
+                            Klik <em>Publish</em>, kemudian <em>Update</em>. Setiap perubahan pada nota atau arahan memerlukan publish semula.</div></li>
+                        <li><div class="step-content"><strong>Kongsi pautan (paling mudah)</strong>
+                            Pilih <em>Run App</em> dan salin alamat web. Hantar kepada kelas anda melalui WhatsApp atau Google Classroom. Ia berfungsi di telefon.</div></li>
+                        <li><div class="step-content"><strong>Atau tambah gelembung sembang pada laman web</strong>
+                            Pilih <em>Embed Into Site</em> dan salin kod ke Google Site, Blogger atau laman sekolah anda, sebelum penghujung halaman. Beginilah pembantu Prompt Library berfungsi.</div></li>
+                    </ol>
+                    <div class="guide-callout warn">
+                        <strong>🔒 Senarai semak keselamatan</strong>
+                        <ul>
+                            <li>Kunci <code>nvapi-</code> anda kekal dalam Dify. Ia bukan sebahagian daripada kod embed.</li>
+                            <li>Pautan dan kod gelembung adalah awam: sesiapa yang memilikinya boleh bersembang dan menghabiskan kuota percuma anda. Kongsi dengan kelas anda sahaja.</li>
+                            <li>AI boleh tersilap. Semak jawapan penting (tarikh, markah, peraturan) dengan nota anda.</li>
+                            <li>Jika kunci tertampal dalam sembang atau halaman secara tidak sengaja, padamkannya di build.nvidia.com dan buat kunci baharu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section class="references-section">
+                <h2>🛠️ Penyelesaian Masalah</h2>
+                <div class="reference-category">
+                    <div class="guide-table-wrap">
+                    <table class="guide-table">
+                        <thead><tr><th>Apa yang anda nampak</th><th>Punca dan penyelesaian</th></tr></thead>
+                        <tbody>
+                            <tr><td>"404 page not found" semasa menyimpan model</td><td>URL endpoint salah. Gunakan tepat <code>https://integrate.api.nvidia.com/v1</code>.</td></tr>
+                            <tr><td>"Model not found" atau 404 pada nama model</td><td>ID model tersalah taip atau telah dinamakan semula. Salin semula daripada halaman model di build.nvidia.com.</td></tr>
+                            <tr><td>Ralat 401 atau 403</td><td>Kunci API salah atau tamat tempoh. Buat kunci <code>nvapi-</code> baharu.</td></tr>
+                            <tr><td>429 "too many requests"</td><td>Had percuma tercapai. Tunggu seminit dan cuba lagi, atau kongsi bot dengan lebih sedikit orang.</td></tr>
+                            <tr><td>Jawapan kosong</td><td>Max tokens terlalu rendah. Tetapkan <code>1200</code> atau lebih.</td></tr>
+                            <tr><td>Jawapan dalam bahasa yang salah</td><td>Kekalkan baris "Balas dalam bahasa mesej terkini murid" dalam arahan.</td></tr>
+                            <tr><td>"Saya tidak jumpa" untuk perkara yang ada dalam nota</td><td>Tambah perkataan yang sebenarnya digunakan murid sebagai tajuk, dan pastikan setiap bahagian pendek.</td></tr>
+                            <tr><td>Tidak boleh pasang plugin pada pelan percuma</td><td>Semak halaman pelan Dify yang terkini. Sebagai sandaran anda boleh menjalankan Dify pada komputer sendiri, lihat di bawah.</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appendix -->
+            <section class="references-section">
+                <h2>💻 Sandaran: jalankan Dify pada komputer sendiri</h2>
+                <div class="reference-category">
+                    <p>Dify ialah sumber terbuka. Jika Dify Cloud tidak sesuai, anda boleh menjalankannya dengan Docker pada komputer sendiri, sepenuhnya percuma dan peribadi. Ia mengambil kira-kira 30 minit dan memerlukan sedikit kemahiran baris arahan, jadi minta bantuan guru ICT sekolah anda. Ikuti panduan rasmi di <a href="https://docs.dify.ai" target="_blank" rel="noopener">docs.dify.ai</a>. Langkah 1 hingga 6 di atas kekal sama.</p>
+                </div>
+            </section>
+
+            <!-- Part 2 -->
+            <section class="references-section">
+                <h2>🔜 Akan datang: automasikan pentadbiran sekolah dengan n8n</h2>
+                <div class="reference-category">
+                    <p>Bahagian 2 akan menunjukkan cara menyambung kunci NVIDIA percuma yang sama ke n8n untuk menyediakan draf surat kepada ibu bapa, meringkaskan borang dan menghantar e-mel secara automatik.</p>
+                    <p><a href="malay.html" class="btn-primary">← Kembali ke Perpustakaan Prompt</a></p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Malaysian Teachers Prompt Library</p>
+                    <p class="footer-note">Dibina dengan ❤️ untuk pendidik Malaysia</p>
+                </div>
+                <div class="footer-right">
+                    <a href="malay.html">Kembali ke Laman Utama</a>
+                    <span class="separator">|</span>
+                    <a href="references.html">Rujukan</a>
+                    <span class="separator">|</span>
+                    <a href="https://github.com/lerlerchan/Prompt-libraries-for-Malaysia-Educators" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
