@@ -1,6 +1,6 @@
 # 🎓 Malaysian Teachers AI Prompt Library
 
-A free, open-source collection of 150+ ready-to-use AI prompts specifically designed for Malaysian educators. Copy, paste, and enhance your teaching with AI!
+A free, open-source collection of 160+ ready-to-use AI prompts specifically designed for Malaysian educators. Copy, paste, and enhance your teaching with AI!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
