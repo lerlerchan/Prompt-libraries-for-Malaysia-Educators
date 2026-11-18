@@ -934,6 +934,288 @@ Requirements:
 The comparison should make it easy for students to understand the key differences and similarities at a glance.`
                 }
             ]
+        },
+        {
+            id: "mpt4",
+            name: "MPT4: Year 4 Learning Assessment",
+            icon: "fa-clipboard-check",
+            description: "Support understanding, pupil readiness and early intervention for the national standardised Year 4 assessment. Covers Bahasa Melayu, Bahasa Inggeris, Mathematics and Science, plus Bahasa Cina in SJKC or Bahasa Tamil in SJKT.",
+            prompts: [
+                {
+                    title: "Understanding MPT4 and Its Instruments",
+                    description: "Turn public guidance into a practical staff briefing with an evidence trail.",
+                    tags: ["MPT4", "Guidance", "Year 4", "Assessment"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+Prepare a briefing for [Subject] using [Public Instrument Guidance]. Explain the national standardised assessment, literacy, numeracy and learning competence, and Pentaksiran untuk Pembelajaran. Clarify that it does not replace UPSR/PT3. Output a table of purpose, supported instrument features, classroom implications and source sections, followed by five staff questions. Separate documented requirements from teaching suggestions; leave unsupported item counts or specifications unresolved.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q1–5, Q8, Q10; Panduan Pengurusan Matriks Pembelajaran (Management Guide), sections 4, 6.`
+                },
+                {
+                    title: "Reading the MPT4 Management Guide",
+                    description: "Extract role-specific duties and unresolved questions from public management guidance.",
+                    tags: ["MPT4", "Management", "Roles", "Year 4"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+For [Staff Role], summarise [Public Management Sections] as a before/during/after checklist. Include registration checks, administration, scoring coordination, recording, reporting and confidentiality only where supported. Give each row a responsible role, required evidence and source section. Distinguish school actions from LP responsibilities. Finish with an escalation question list for [School Coordinator Role], especially where instructions conflict; do not invent deadlines or replace the official guide.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Panduan Pengurusan Matriks Pembelajaran (Management Guide), sections 5, 7–12.`
+                },
+                {
+                    title: "Calm and Meaningful Pupil Preparation",
+                    description: "Build confidence through broad learning routines without predicted-test drilling.",
+                    tags: ["MPT4", "Readiness", "Wellbeing", "Literacy"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+Design [Number of Sessions] sessions for [Subject and Skills], using [Available Minutes and Materials] and [Aggregate Language Support Needs]. Include reading instructions, explaining reasoning, checking work and asking for help. Output a session table with objective, low-pressure activity, teacher observation and adaptation. Add a reassuring pupil briefing and a home routine. Use varied Malaysian everyday contexts; avoid ranking, predicted questions or narrowing the curriculum to a test.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q1–3; Penataran Matriks Pembelajaran (briefing slides), slide 5.`
+                },
+                {
+                    title: "Original Literacy Diagnostic Activities",
+                    description: "Create short reading and writing tasks that reveal support needs.",
+                    tags: ["MPT4", "Literacy", "Diagnostic", "Original Items"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+Create [Number of Items] literacy tasks in [Teaching Language] for [Verified Learning Skills]. Write a new short passage set in [Malaysian Context]. Include retrieving information, explaining meaning and a brief written response, where suitable for those skills. Output passage, numbered tasks, suggested answers and a skill/evidence/misconception table. Add oral scaffolds and a fresh follow-up task. Label these classroom diagnostics, not LP items; do not infer official grades from the results.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q3, Q10.`
+                },
+                {
+                    title: "Original Numeracy Diagnostic Activities",
+                    description: "Use original problems to uncover reasoning and common numeracy misconceptions.",
+                    tags: ["MPT4", "Numeracy", "Reasoning", "Diagnostic"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+For [Verified Numeracy Skills], create [Number of Problems] problems using [Local Context] and [Teaching Language]. Use RM, quantities or measurements only where relevant. Include a concrete representation, a calculation and an explanation task across the set. Output problems, worked answers, alternative valid methods and likely error interpretations. Suggest one short reteaching activity per misconception and a new check question. Keep diagnostic difficulty separate from any claim about official MPT4 structure or grade boundaries.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q3, Q10.`
+                },
+                {
+                    title: "From Results to Early Intervention",
+                    description: "Turn safe summary evidence into a monitored remedial and enrichment plan.",
+                    tags: ["MPT4", "Intervention", "Remediation", "Enrichment"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+Analyse [Synthetic or Safely Aggregated Skill Summary] for [Subject] alongside [Aggregate Classroom Observations]. Never upload restricted score documents. Separate observed patterns from tentative explanations; acknowledge missing evidence. Produce a [Number of Weeks]-week table of skill priority, flexible group, remedial or enrichment activity, success evidence and review point. Include an original entry and exit check and rules for changing support after review. Do not rank pupils or diagnose ability from a single score.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q3, Q14; Panduan Pengurusan Matriks Pembelajaran (Management Guide), sections 9.2, 11.6.`
+                },
+                {
+                    title: "Explaining MPT4 to Parents",
+                    description: "Draft a reassuring family briefing with practical home support.",
+                    tags: ["MPT4", "Parents", "Communication", "Home Support"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+Write a parent note in [Preferred Language] for [School Type], using [Synthetic Learning Example] and [School Contact Role]. Explain the learning-support purpose and that MPT4 does not replace UPSR/PT3. State that pupils are exempt from UASA for subjects assessed through Matriks Pembelajaran; do not extend this to all year groups. Output a short letter, three home activities and four FAQs, including how to seek clarification through school. Avoid comparisons, labels and promises of grades.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q3–4, Q9, Q17.`
+                },
+                {
+                    title: "School MPT4 Operations Planner",
+                    description: "Prepare a source-linked operational schedule for school review.",
+                    tags: ["MPT4", "School Planning", "Schedule", "Quality Assurance"],
+                    prompt: `Support a Year 4 teacher in Malaysia with MPT4 (Matriks Pembelajaran Tahun 4). Use [Verified Public Guidance] and [School Context]. Treat activities as classroom support, not official instruments or predicted tests. Never request or upload TERHAD materials.
+
+Build an operations plan from [Verified Timetable and Work Schedule], [Staff Roles] and [Aggregate Access Needs]. The 2026 timetable specifies 6–8 October; distinguish it from the FAQ’s August–October window and check the year. Output phase, task, responsible role, dependency, deadline source and completion evidence. Cover readiness, secure handling, administration, scoring coordination, reporting and follow-up. Add a contingency referral list, not invented emergency procedures. Keep names, credentials and restricted materials out of the plan.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Jadual Matriks Pembelajaran Tahun 4 2026 (timetable); Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q5, Q18; Panduan Pengurusan Matriks Pembelajaran (Management Guide), sections 8–12, 14; Penataran Matriks Pembelajaran (briefing slides), slide 23.`
+                }
+            ]
+        },
+        {
+            id: "igcse",
+            name: "Cambridge IGCSE Teaching and Assessment",
+            icon: "fa-book-open",
+            description: "Reusable support for Mathematics, English as a Second Language, Biology, Chemistry and Physics. Teachers supply verified syllabus details for every task.",
+            prompts: [
+                {
+                    title: "Verified Syllabus to Teaching Sequence",
+                    description: "Map verified requirements to a manageable teaching sequence.",
+                    tags: ["IGCSE", "Syllabus", "Planning", "Secondary"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+Plan [Number of Lessons] lessons on [Topic] using [Available Minutes and Resources]. Output a table linking each supplied syllabus statement to prerequisites, learning goal, activity and evidence of learning. Identify gaps and duplicated coverage, then propose a short review lesson. Use familiar Malaysian examples where appropriate. Keep optional enrichment clearly separate from required content, and quote only the minimum syllabus wording needed for traceability.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Concept and Language Scaffolds",
+                    description: "Build access to subject concepts and vocabulary without reducing the learning goal.",
+                    tags: ["IGCSE", "Vocabulary", "Scaffolding", "Differentiation"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+For [Topic], use [Aggregate Language Needs] and [Preferred Support Language] to create a scaffolded explanation. Output key terms with plain meanings, one original worked example, sentence starters and three increasingly independent tasks with answers. Distinguish everyday meanings from subject meanings. For English as a Second Language, focus on the supplied communicative skill; for other subjects, preserve conceptual demand. Include a quick check that separates language difficulty from conceptual misunderstanding.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Misconception Diagnostic Questions",
+                    description: "Probe reasoning with original questions and useful follow-up prompts.",
+                    tags: ["IGCSE", "Diagnostic", "Misconceptions", "Reasoning"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+Create [Number of Questions] diagnostic questions for [Topic and Prerequisites]. Include plausible distractors or contrasting responses, an invitation to explain reasoning, and answers. Output a table of question, targeted idea, likely response pattern, tentative interpretation and next teaching move. Make wrong options diagnostically meaningful rather than tricky. Include a fresh check after reteaching. Do not treat one wrong answer as proof of a misconception or assign official grades to this classroom diagnostic.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Original Assessment Task Builder",
+                    description: "Draft practice tasks linked to teacher-verified assessment requirements.",
+                    tags: ["IGCSE", "Assessment", "Original Tasks", "Alignment"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+Draft [Number of Tasks] tasks on [Topic] for [Intended Classroom Use]. Map each task to a supplied syllabus statement and, only if provided, a verified assessment objective. Output student instructions, original stimulus, task, suggested answer and alignment rationale. Apply marks or timing only when supplied. Check ambiguity, accessibility and unintended clues. Label the result teacher practice material, not an official Cambridge paper or prediction; list unresolved specification questions separately.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Investigation and Evidence Tasks",
+                    description: "Adapt an evidence-based inquiry to the selected subject and available resources.",
+                    tags: ["IGCSE", "Inquiry", "Evidence", "Classroom Tasks"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+Design an inquiry on [Topic] using [Available Resources] and [Teacher-Approved Safety Constraints]. Use pattern investigation for Mathematics, communication or text inquiry for English as a Second Language, or a safe evidence task for science. Output question, procedure, synthetic dataset or original text, analysis prompts, expected reasoning and limitations. For practical science, require teacher risk review and offer a non-practical alternative. Do not imply this task matches an examination component unless verified details support that claim.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Draft Marking and Moderation Pack",
+                    description: "Compare synthetic responses against supplied criteria to improve marking consistency.",
+                    tags: ["IGCSE", "Marking", "Moderation", "Synthetic Responses"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+Use [Teacher-Written Original Task] and [Verified Criteria or Teacher Draft] to prepare a moderation pack. Clearly distinguish official criteria from proposed classroom criteria. Produce a marking table with acceptable alternatives, three synthetic responses, tentative judgements and criterion-based explanations. Add borderline discussion questions and a disagreement log template. Do not invent official bands or thresholds. Finish with decisions that the teacher team must settle before the draft can be used for marking.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Feedback and Improvement Cycle",
+                    description: "Turn response patterns into specific feedback and a second attempt.",
+                    tags: ["IGCSE", "Feedback", "Revision", "Learner Reflection"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+Use [Synthetic Response or Aggregate Error Patterns], [Original Task] and [Verified Success Criteria]. Output a feedback table with strength, evidence, one priority improvement and a question that prompts revision. Then provide a short reteaching explanation, a new parallel task with answer guidance and a learner reflection checklist. Keep feedback encouraging and actionable for multilingual Malaysian learners. Separate content accuracy from expression where the supplied criteria permit; do not promise examination grades.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Coverage Audit and Targeted Revision",
+                    description: "Check curriculum coverage and prioritise revision from aggregate evidence.",
+                    tags: ["IGCSE", "Coverage", "Revision", "Analysis"],
+                    prompt: `Support a Cambridge IGCSE teacher in a Malaysian secondary classroom. Subject: [Subject]. Use [Verified Syllabus Details] supplied by the teacher, including the applicable examination year. Do not invent syllabus codes, assessment objectives, weightings or paper formats.
+
+Audit [Teaching Coverage Summary] against supplied requirements and [Aggregate Skill Results]. Output a coverage table: requirement, taught evidence, practice evidence, confidence and gap. Build a [Number of Weeks]-week revision plan balancing weak areas with previously learned content. Include original retrieval questions, mixed practice and a review checkpoint with suggested answers. Flag missing denominators or uncertain mappings, and explain limitations. Prioritise learning needs rather than predicting likely examination questions or inventing grade conversions.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                }
+            ]
+        },
+        {
+            id: "uasa",
+            name: "UASA: Year 5",
+            icon: "fa-chalkboard-teacher",
+            description: "Year 5 planning, original items and follow-up for Bahasa Melayu, Bahasa Inggeris, Bahasa Cina, Mathematics and Science, using teacher-verified requirements.",
+            prompts: [
+                {
+                    title: "Year 5 Item Specification Table",
+                    description: "Build a JSI draft with traceable coverage and totals.",
+                    tags: ["UASA", "JSI", "Coverage", "Year 5"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+Build a Jadual Spesifikasi Item (JSI) for [Topics Taught] using [Teacher-Verified Cognitive Levels]. Output columns for learning standard, skill, cognitive demand, item identifier, item type and supplied marks. Show totals and compare them with verified requirements. Highlight omitted content, excessive repetition and unresolved allocations. Explain each proposed mapping briefly. Keep unprovided marks, distribution and duration as UNVERIFIED rather than filling them with customary values; label the table a teacher-review draft.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Questions by Cognitive Demand",
+                    description: "Write original questions with a reasoned cognitive-level mapping.",
+                    tags: ["UASA", "Question Writing", "Cognitive Levels", "Original Items"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+Use [Approved JSI Draft] and [Topic] to write [Number of Questions] original items. Output item identifier, stimulus, question, intended skill, cognitive level, justification and answer. Make cognitive demand depend on reasoning required, not merely the command verb. Use suitable Malaysian contexts and age-appropriate language. Check ambiguity, distractor quality and solvability. Respect only the supplied item types and allocations; separate optional alternative questions from the draft so totals remain auditable.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Paper Review and Coverage Audit",
+                    description: "Review a teacher-written draft for coverage, clarity and consistency.",
+                    tags: ["UASA", "Paper Review", "Coverage", "Quality"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+Review [Teacher-Written Original Paper] against [Approved JSI] and [Topics Taught]. Output an audit table with item, requirement, evidence, issue, severity and proposed revision. Check coverage, language load, unintended clues, duplicate skills, answerability and consistency with supplied marks and timing. Recalculate totals only from provided values. Include a concise readiness summary and unresolved questions for the subject panel. Do not certify official compliance or silently rewrite questions; show proposed changes separately.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Targeted Year 5 Practice",
+                    description: "Provide focused practice with scaffolds and a fresh progress check.",
+                    tags: ["UASA", "Practice", "Differentiation", "Skills"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+Using [Aggregate Skill Gaps], prepare [Number of Tasks] tasks on [Topic] for [Available Learning Time]. Organise them into guided, independent and extension practice without labelling pupils. Include original questions, optional hints, worked answers and a fresh exit check. Output a task/skill/support/success-evidence table followed by the printable activities. Explain how the teacher can adjust support from observed responses. Do not present this focused practice as a complete UASA paper or a prediction of tested topics.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Draft Year 5 Marking Scheme",
+                    description: "Prepare transparent answer guidance for teacher-written questions.",
+                    tags: ["UASA", "Marking Scheme", "Answers", "Consistency"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+For [Teacher-Written Original Questions], use [Verified Mark Allocations and Criteria] to draft answer guidance. Output item identifier, expected answer, acceptable alternatives, evidence required and permitted credit. Explain common errors without inventing penalties. Where allocations or partial-credit rules are absent, flag the issue for the teacher rather than creating official rules. Check mathematical working and language alternatives as relevant. End with a checklist for subject-panel approval and identify any ambiguous question needing revision.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Rubric Moderation with Synthetic Responses",
+                    description: "Test a draft rubric through contrasting synthetic responses and discussion.",
+                    tags: ["UASA", "Rubric", "Moderation", "Synthetic Data"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+Use [Teacher-Written Original Task] and [Verified Rubric or Teacher Draft]. Create three contrasting synthetic responses, including one borderline case. Output each response, criterion evidence, provisional judgement and an alternative interpretation a second marker might offer. Identify ambiguous descriptors and propose clarifications labelled for panel approval. Add a moderation discussion agenda and decision log. Apply only supplied score rules; do not claim this exercise replaces official moderation procedures or authorises final marks.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Post-Test Analysis and Follow-Up",
+                    description: "Translate aggregate item results into a balanced follow-up plan.",
+                    tags: ["UASA", "Analysis", "Remediation", "Enrichment"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+Analyse [Synthetic or Aggregate Item Results with Denominators] using [Item-to-Skill Mapping] and [Aggregate Teaching Observations]. Show calculations, missing data and limits; do not infer causes from percentages alone. Output a skill/evidence/tentative-explanation/action table and a [Number of Weeks]-week remedial and enrichment plan. Include flexible grouping, original follow-up tasks, answers and review criteria. Distinguish absent responses from incorrect ones where data allow, and avoid pupil rankings or unsupported official grade conversions.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.`
+                },
+                {
+                    title: "Feedback and Parent Letter",
+                    description: "Draft constructive feedback and a family letter from safe learning summaries.",
+                    tags: ["UASA", "Feedback", "Parents", "Home Learning"],
+                    prompt: `Support Year 5 UASA teaching in Malaysia for [Subject]. Use [Format dan Keperluan Disahkan] supplied by the teacher and [Verified DSKP Details]. Do not invent formats, marks, cognitive distributions or timing.
+
+Using [Synthetic Learning Profile], [Preferred Language] and [School Contact Role], draft a feedback table and a short parent letter. Give two strengths, one priority skill, a practical school action and two low-cost home activities with an original example. Set a review point using [Review Period]. Keep the tone supportive and avoid comparisons or guaranteed outcomes. This task concerns Year 5; do not generalise the MPT4 FAQ exemption to all UASA pupils or invent school policy.
+
+Use synthetic or aggregate data only; never include student names, IC numbers or personal records. Create original questions only; do not copy past papers or textbook text. If official details are missing, say UNVERIFIED and ask the teacher before proceeding with dependent work. End with a reminder that the teacher must review accuracy, suitability and alignment before use.
+
+Reference: Matriks Pembelajaran FAQ (Lembaga Peperiksaan), Q9 (Matriks Pembelajaran exemption scope).`
+                }
+            ]
         }
     ]
 };

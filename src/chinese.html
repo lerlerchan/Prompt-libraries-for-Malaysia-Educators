@@ -66,6 +66,9 @@
                 <input type="text" id="searchInput" placeholder="搜索提示词... (例如: 数学, 评估, 创意写作)">
             </div>
             <div class="filter-buttons" id="filterButtons">
+                <button class="filter-btn" data-category="mpt4">MPT4：四年级学习评估</button>
+                <button class="filter-btn" data-category="igcse">Cambridge IGCSE 教学与评估</button>
+                <button class="filter-btn" data-category="uasa">UASA：五年级</button>
                 <button class="filter-btn active" data-category="all">全部</button>
                 <button class="filter-btn" data-category="通用">通用兼容</button>
                 <button class="filter-btn" data-category="deepseek">DeepSeek</button>
@@ -340,7 +343,6 @@
                         <i class="fas fa-eye"></i> 查看全文
                     </button>
                 </div>
-            </div>
             </div>
             </div>
 
@@ -958,6 +960,372 @@
             </div>
             </div>
 
+            <h2 class="category-title" data-category="mpt4" data-library-category="mpt4"><i class="fas fa-clipboard-check"></i> MPT4：四年级学习评估<span style="display: block; font-size: 1rem; font-weight: normal; color: var(--text-secondary);">协助教师理解四年级全国标准化评估、支持学生准备及开展早期干预。涵盖国文、英文、数学、科学，以及华小的华文或淡小的淡米尔文。</span></h2>
+            <div class="prompt-cards-grid">
+            <div class="prompt-card" id="mpt4-01" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 认识 MPT4 与评估工具</div>
+                <p class="prompt-description">依据公开指南整理教师简报，逐项列明资料出处。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">指南</span><span class="tag">四年级</span><span class="tag">评估</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+请依据 [公开的评估工具说明]，为 [科目] 制作教师简报。解释全国标准化评估、读写与计算能力、学习能力，以及 Pentaksiran untuk Pembelajaran（促进学习的评估）。说明 MPT4 并非取代 UPSR/PT3。以表格列出目的、有来源支持的工具特点、教学启示和出处，再列五个讨论问题。区分官方要求与教学建议；没有依据的题数或细则须保留待核实。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问1–5, 问8, 问10; 《Panduan Pengurusan Matriks Pembelajaran》（管理指南）, 章节 4, 6.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="mpt4-02" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 梳理 MPT4 管理指南</div>
+                <p class="prompt-description">按岗位整理职责，并列出须向校方确认的问题。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">管理</span><span class="tag">职责</span><span class="tag">四年级</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+针对 [工作人员岗位]，把 [公开管理指南相关章节] 整理成评估前、期间和之后的核对清单。按资料涵盖报名核查、施测、评分协调、记录、报告与保密要求。每行列明负责岗位、完成凭据及出处，分清学校与 LP 的责任。最后列出应向 [学校协调岗位] 确认的问题，特别标明相互冲突的指示；不得编造截止日期或把摘要当成正式指南。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Panduan Pengurusan Matriks Pembelajaran》（管理指南）, 章节 5, 7–12.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="mpt4-03" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 安心准备，扎实学习</div>
+                <p class="prompt-description">用日常学习活动建立信心，避免押题操练。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">学习准备</span><span class="tag">身心健康</span><span class="tag">读写</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+围绕 [科目与技能]，按 [可用时间与材料] 和 [班级语言支持需求汇总] 设计 [活动次数] 次活动。练习读懂指示、说明思路、检查答案和主动求助。以表格列出目标、轻松活动、教师观察点及调整方法，再附一段安心说明和家庭学习小习惯。采用多样的马来西亚生活情境，不排名、不押题，也不把课程缩减为应试训练。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问1–3; 《Penataran Matriks Pembelajaran》（简报）, 幻灯片 5.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="mpt4-04" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 原创读写诊断活动</div>
+                <p class="prompt-description">通过简短阅读与写作任务，观察学生需要哪些支持。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">读写</span><span class="tag">诊断</span><span class="tag">原创题目</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+针对 [已核实的学习技能]，用 [教学语言] 编写 [题目数量] 道读写任务，并原创一篇以 [马来西亚生活情境] 为背景的短文。按技能需要安排提取信息、解释意思和简短写作。输出短文、编号题目、参考答案，以及“技能—表现证据—可能误解”表。附口头提示和一道新的跟进题。注明这是课堂诊断材料，并非 LP 试题；不得据此推算官方等级。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问3, 问10.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="mpt4-05" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 原创计算与数学思维诊断活动</div>
+                <p class="prompt-description">以原创问题观察计算方法、思考过程及常见误解。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">计算能力</span><span class="tag">推理</span><span class="tag">诊断</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+依据 [已核实的计算技能]，以 [本地情境] 和 [教学语言] 编写 [题目数量] 道问题。按需要使用 RM、数量或测量情境，整组任务包含具体表征、计算和解释思路。输出题目、解题步骤、合理的替代方法及可能的错因。每种误解配一项简短重教活动及一道新检查题。课堂诊断的难度安排不能被当成 MPT4 官方结构或等级界线。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问3, 问10.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="mpt4-06" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 从评估发现规划早期干预</div>
+                <p class="prompt-description">根据安全的汇总证据，规划可追踪的补救与增广活动。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">干预</span><span class="tag">补救</span><span class="tag">增广</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+结合 [班级观察汇总]，分析 [科目] 的 [虚构或安全汇总的技能表现]，不得上传受限的分数文件。区分已观察到的现象与暂时解释，并说明证据不足之处。制定 [周数] 周计划，表列优先技能、灵活分组、补救或增广活动、成功证据及复查时间。附原创的前后检查题和调整支持的方法。不对学生排名，也不凭一次分数判定能力。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问3, 问14; 《Panduan Pengurusan Matriks Pembelajaran》（管理指南）, 章节 9.2, 11.6.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="mpt4-07" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 向家长说明 MPT4</div>
+                <p class="prompt-description">拟写清晰安心的家长说明，并提供可行的家庭学习建议。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">家长</span><span class="tag">沟通</span><span class="tag">家庭支持</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+请用 [沟通语言] 为 [学校类型] 拟写家长说明，采用 [虚构学习例子] 和 [学校联络岗位]。解释支持学习的目的，以及 MPT4 并非取代 UPSR/PT3。说明学生已通过 Matriks Pembelajaran 评估的科目可豁免 UASA，不得扩大解释为所有年级一律豁免。输出简短信件、三项家庭活动和四个常见问答，包括如何向学校查询。避免比较学生、贴标签或承诺等级。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问3–4, 问9, 问17.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="mpt4-08" data-category="mpt4">
+                <div class="prompt-title"><i class="fas fa-clipboard-check"></i> 学校 MPT4 执行计划</div>
+                <p class="prompt-description">整理附来源的执行安排，供校方审核。</p>
+                <div class="prompt-tags"><span class="tag">MPT4</span><span class="tag">校务规划</span><span class="tag">时间表</span><span class="tag">质量保障</span></div>
+                <div class="prompt-content">请协助马来西亚小学四年级教师开展 MPT4（Matriks Pembelajaran Tahun 4，四年级学习评估）相关工作。依据 [已核实的公开指南] 和 [学校背景]，把活动定位为课堂学习支持，不得冒充官方评估工具或押题材料。不得要求提供或上传 TERHAD（受限）材料。
+
+依据 [已核实的考试时间表与工作日程]、[工作人员岗位] 和 [无障碍需求汇总] 制作执行计划。所提供的 2026 年时间表列明 10 月 6–8 日，须与 FAQ 的 8–10 月总体时段区分，并核对适用年份。表列阶段、任务、负责岗位、前置条件、日期出处及完成凭据，涵盖准备、安全保管、施测、评分协调、报告与跟进。附突发情况的请示清单，不编造应急程序；不得填写姓名、登录资料或受限材料。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Jadual Matriks Pembelajaran Tahun 4 2026》（时间表）; 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问5, 问18; 《Panduan Pengurusan Matriks Pembelajaran》（管理指南）, 章节 8–12, 14; 《Penataran Matriks Pembelajaran》（简报）, 幻灯片 23.</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            </div>
+
+            <h2 class="category-title" data-category="igcse" data-library-category="igcse"><i class="fas fa-book-open"></i> Cambridge IGCSE 教学与评估<span style="display: block; font-size: 1rem; font-weight: normal; color: var(--text-secondary);">适用于数学、英语作为第二语言、生物、化学和物理。每项任务均须由教师提供已核实的课程纲要资料。</span></h2>
+            <div class="prompt-cards-grid">
+            <div class="prompt-card" id="igcse-01" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 从已核实纲要规划教学顺序</div>
+                <p class="prompt-description">把已核实的要求转化为可实施的教学顺序。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">课程纲要</span><span class="tag">教学规划</span><span class="tag">中学</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+请按 [可用课时与资源]，为 [课题] 规划 [课数] 节课。以表格把教师提供的纲要条目对应到先备知识、学习目标、活动和学习证据。指出遗漏与重复，再安排一节简短复习课。适当采用马来西亚学生熟悉的例子。明确区分选做增广与必学内容，只引用便于追溯所需的最少纲要文字。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="igcse-02" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 概念理解与语言支架</div>
+                <p class="prompt-description">兼顾学科概念和语言需求，保留原有学习目标。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">词汇</span><span class="tag">学习支架</span><span class="tag">分层教学</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+针对 [课题]，结合 [语言需求汇总] 和 [辅助语言]，设计逐步撤除支架的说明。输出关键词及浅白解释、一个原创示例、句式提示，以及三项独立程度递增的任务与答案。区分词语的日常含义和学科含义。英语作为第二语言须围绕指定沟通技能；其他科目应保留概念要求。附简短检查，帮助教师区分语言障碍与概念误解。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="igcse-03" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 概念误解诊断题</div>
+                <p class="prompt-description">用原创题目与追问了解学生的思考过程。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">诊断</span><span class="tag">概念误解</span><span class="tag">推理</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+为 [课题与先备知识] 编写 [题数] 道诊断题，包含有依据的干扰项或对比回答、解释思路的追问及答案。表列题目、目标概念、可能回答、暂时解释和下一步教学行动。错误选项应帮助发现思路，而非故意设陷阱。附重教后的新检查题。不能把一次答错视为确定的概念误解，也不能给这组课堂诊断套用官方等级。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="igcse-04" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 原创评估任务设计</div>
+                <p class="prompt-description">按教师核实的评估要求拟定练习任务。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">评估</span><span class="tag">原创任务</span><span class="tag">课程对应</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+为 [课堂用途] 编写 [题数] 项关于 [课题] 的任务。逐题对应教师提供的纲要条目；只有已提供核实资料时，才对应评估目标。输出学生指示、原创素材、题目、参考答案及对应理由。分值和时长仅采用教师提供的资料。检查歧义、可理解性及无意泄露答案的提示。标明这是教师练习材料，并非 Cambridge 官方试卷或预测题，另列待确认事项。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="igcse-05" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 探究与证据任务</div>
+                <p class="prompt-description">按学科与现有资源设计重视证据的探究任务。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">探究</span><span class="tag">证据</span><span class="tag">课堂任务</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+围绕 [课题]，按 [现有资源] 和 [教师认可的安全限制] 设计探究。数学可研究规律，英语作为第二语言可探究沟通或文本，科学可采用安全的证据分析任务。输出问题、步骤、虚构数据或原创文本、分析提示、预期推理及局限。科学实作须经教师风险审核，并附无需实作的替代方案。没有核实依据时，不得宣称任务对应某个考试部分。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="igcse-06" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 评分与审核讨论包草稿</div>
+                <p class="prompt-description">以虚构回答对照评分准则，促进评分一致。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">评分</span><span class="tag">审核</span><span class="tag">虚构回答</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+依据 [教师原创任务] 和 [已核实准则或教师草稿] 准备评分讨论材料，明确区分官方准则与拟议的课堂准则。输出评分表、可接受的替代答案、三份虚构回答、暂定判断及逐项理由。附临界表现的讨论问题与分歧记录表，不编造官方等级或分数界线。最后列明教师团队在正式采用草稿前须达成共识的事项。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="igcse-07" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 反馈与改进循环</div>
+                <p class="prompt-description">根据回答模式提出具体反馈，并安排再次尝试。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">反馈</span><span class="tag">改进</span><span class="tag">学习反思</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+结合 [虚构回答或错误模式汇总]、[原创任务] 与 [已核实的成功标准]，表列优点、证据、一项优先改进点及引导修改的问题。再提供简短重教说明、一道新的同类任务及答案提示，附学生反思清单。反馈应具体、鼓励尝试，并适合马来西亚多语学生。只有准则允许时才区分内容正确性与表达问题，不承诺考试等级。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="igcse-08" data-category="igcse">
+                <div class="prompt-title"><i class="fas fa-book-open"></i> 课程覆盖检查与针对性复习</div>
+                <p class="prompt-description">检查课程覆盖情况，依据汇总证据安排复习重点。</p>
+                <div class="prompt-tags"><span class="tag">IGCSE</span><span class="tag">课程覆盖</span><span class="tag">复习</span><span class="tag">分析</span></div>
+                <div class="prompt-content">请协助马来西亚中学的 Cambridge IGCSE 教师。科目：[Subject]。依据教师提供的 [Verified Syllabus Details]（已核实的课程纲要资料，含考试年份）开展工作，不得自行编造课程代码、评估目标、比重或试卷格式。
+
+对照教师提供的要求，以 [教学覆盖摘要] 和 [技能表现汇总] 检查课程覆盖情况。表列要求、已教证据、练习证据、判断把握及缺口。制定 [周数] 周复习计划，兼顾薄弱处与已学内容，附原创提取练习、混合练习和检查点及参考答案。标明缺少统计基数或对应关系不清之处，解释局限。依据学习需求安排重点，不押题，不编造等级换算。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            </div>
+
+            <h2 class="category-title" data-category="uasa" data-library-category="uasa"><i class="fas fa-chalkboard-teacher"></i> UASA：五年级<span style="display: block; font-size: 1rem; font-weight: normal; color: var(--text-secondary);">依据教师核实的要求，支持五年级国文、英文、华文、数学和科学的规划、原创命题及评估后跟进。</span></h2>
+            <div class="prompt-cards-grid">
+            <div class="prompt-card" id="uasa-01" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 五年级 JSI 命题规格表</div>
+                <p class="prompt-description">拟定可核对课程覆盖与总数的 JSI 草稿。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">JSI</span><span class="tag">课程覆盖</span><span class="tag">五年级</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+针对 [已教课题]，按 [教师核实的认知层次] 制作 Jadual Spesifikasi Item（JSI，命题规格表）。列出学习标准、技能、认知要求、题号、题型及已提供的分值，汇总后对照核实要求。标出遗漏、过度重复及尚未确定的分配，简要说明对应理由。未提供的分值、比例和时长应标为 UNVERIFIED，不能用惯例补齐；注明这是供教师审核的草稿。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="uasa-02" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 按认知要求编写题目</div>
+                <p class="prompt-description">编写原创题目，并说明认知层次的判断依据。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">命题</span><span class="tag">认知层次</span><span class="tag">原创题目</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+依据 [已批准的 JSI 草稿] 和 [课题] 编写 [题数] 道原创题。输出题号、素材、题目、目标技能、认知层次、判断理由及答案。认知要求应由实际思考过程决定，不能只看指令动词。采用适龄语言与马来西亚生活情境，检查歧义、干扰项和可解性。只沿用已提供的题型与分配；备选题须另列，便于核对总数。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="uasa-03" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 试卷审阅与课程覆盖检查</div>
+                <p class="prompt-description">检查教师原创试卷的覆盖、清晰度与一致性。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">试卷审阅</span><span class="tag">课程覆盖</span><span class="tag">质量</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+对照 [已批准的 JSI] 和 [已教课题]，审阅 [教师原创试卷]。表列题号、要求、证据、问题、优先程度及修改建议。检查覆盖、语言负担、无意提示、技能重复、可作答性，以及与已提供分值和时长的一致性。总数只依据现有数值计算。附准备情况摘要及待科组讨论的问题；不宣称已获官方认可，不暗中改题，修改建议须另列。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="uasa-04" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 五年级针对性练习</div>
+                <p class="prompt-description">安排有支架的重点练习，再用新题检查进展。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">练习</span><span class="tag">分层教学</span><span class="tag">技能</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+根据 [技能缺口汇总]，为 [课题] 在 [可用学习时间] 内设计 [任务数量] 项练习。分为引导、独立和增广任务，但不给学生贴标签。提供原创题、可选提示、解答步骤及新的离堂检查题。先输出任务、技能、支持与成功证据表，再列可打印活动。说明教师如何按观察到的回答调整支架；不能把重点练习称为完整 UASA 试卷或考题预测。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="uasa-05" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 五年级评分方案草稿</div>
+                <p class="prompt-description">为教师原创题目拟定清晰的答案与评分指引。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">评分方案</span><span class="tag">答案</span><span class="tag">一致性</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+针对 [教师原创题目]，依据 [已核实的分值与准则] 拟定答案指引。列出题号、预期答案、可接受替代答案、所需证据及可给分项目。解释常见错误，不自行设定扣分规则。缺少分值或部分给分规则时，应交由教师确认，不能编造官方规定。按学科需要检查数学步骤或语言表达的合理变体。最后附科组审核清单，指出须修改的含糊题目。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="uasa-06" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 使用虚构回答开展量规审核</div>
+                <p class="prompt-description">用不同表现的虚构回答检视评分量规。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">量规</span><span class="tag">审核</span><span class="tag">虚构数据</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+依据 [教师原创任务] 和 [已核实量规或教师草稿]，编写三份表现不同的虚构回答，其中一份处于临界水平。逐份列出准则证据、暂定判断及第二位评分者可能提出的不同解释。找出含糊描述，提出须经科组认可的修订建议。附审核讨论议程与决定记录表。只采用已提供的给分规则；不能声称此练习可取代正式审核程序或授权最终评分。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="uasa-07" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 考后分析与补救增广</div>
+                <p class="prompt-description">把题目表现汇总转化为兼顾补救与增广的计划。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">分析</span><span class="tag">补救</span><span class="tag">增广</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+结合 [题目与技能对应表] 和 [教学观察汇总]，分析 [附统计基数的虚构或汇总答题结果]。显示计算过程、缺失数据和局限，不凭百分比断定原因。输出技能、证据、暂时解释与行动表，并拟定 [周数] 周补救及增广计划。包含灵活分组、原创跟进题、答案和复查标准。资料允许时区分未作答与答错；不排名，不使用未经核实的官方等级换算。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            <div class="prompt-card" id="uasa-08" data-category="uasa">
+                <div class="prompt-title"><i class="fas fa-chalkboard-teacher"></i> 学习反馈与家长信</div>
+                <p class="prompt-description">依据安全的学习摘要拟写具体反馈与家长信。</p>
+                <div class="prompt-tags"><span class="tag">UASA</span><span class="tag">反馈</span><span class="tag">家长</span><span class="tag">家庭学习</span></div>
+                <div class="prompt-content">请协助马来西亚小学五年级教师准备 [科目] 的 UASA（Ujian Akhir Sesi Akademik，学年末评估）材料。依据 [Format dan Keperluan Disahkan]（已核实的格式与要求）及 [已核实的 DSKP 课程与评估标准资料]，不得自行设定官方题型、分数、认知层次比例或考试时长。
+
+依据 [虚构学习概况]、[沟通语言] 和 [学校联络岗位]，拟写反馈表及简短家长信。指出两项优点、一项优先技能、一项可行的学校支持，以及两项低成本家庭活动并附原创例子。按 [复查周期] 设定跟进点。语气应支持成长，不比较学生、不保证结果。本任务针对五年级，不得把 MPT4 FAQ 的豁免说明扩大到所有 UASA 学生，也不得编造校规。
+
+只使用虚构或汇总数据，不得包含学生姓名、身份证号码或个人记录。所有题目必须原创，不得照抄历届试卷或课本内容。缺少官方资料时，标注 UNVERIFIED，并先向教师提问，再处理相关部分。最后提醒教师在使用前核对内容、难度、课程对应及语言是否合适。
+
+参考资料： 《Matriks Pembelajaran 常见问题》（Lembaga Peperiksaan）, 问9 (Matriks Pembelajaran exemption scope).</div>
+                <div class="prompt-actions">
+                    <button class="copy-btn" onclick="copyPrompt(this)"><i class="fas fa-copy"></i> 复制</button>
+                    <button class="view-btn" onclick="viewFullPrompt(this)"><i class="fas fa-eye"></i> 查看全文</button>
+                </div>
+            </div>
+            </div>
+
             <!-- Usage Guide -->
             <div class="section-header" style="margin-top: 3rem;">
                 <h2>💡 使用建议</h2>
@@ -1262,6 +1630,9 @@
                     let nextElement = title.nextElementSibling;
 
                     while (nextElement && !nextElement.classList.contains('category-title')) {
+                        if (title.hasAttribute('data-library-category') && nextElement.classList.contains('prompt-cards-grid')) {
+                            nextCards.push(...nextElement.querySelectorAll('.prompt-card'));
+                        }
                         if (nextElement.classList.contains('prompt-card')) {
                             nextCards.push(nextElement);
                         }
