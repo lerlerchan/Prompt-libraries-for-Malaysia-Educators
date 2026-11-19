@@ -148,10 +148,8 @@ function buildFilledPrompt(template, values) {
     });
 }
 
-// Launch the current modal prompt directly in an AI assistant
-function openPromptInAI(button, provider) {
-    const modal = button.closest('.modal');
-    const promptText = modal.querySelector('.modal-prompt').textContent;
+// Build AI launch URL for a provider (falls back to base URL when prompt is too long)
+function getAILaunchInfo(provider, promptText) {
     const encoded = encodeURIComponent(promptText);
     const urls = {
         chatgpt: `https://chatgpt.com/?q=${encoded}`,
@@ -163,16 +161,34 @@ function openPromptInAI(button, provider) {
         claude: 'https://claude.ai/new',
         perplexity: 'https://www.perplexity.ai/'
     };
-    const targetUrl = urls[provider];
-    if (!targetUrl) return;
+    const fullUrl = urls[provider];
+    if (!fullUrl) return { href: '#', tooLong: false };
+    if (fullUrl.length > 3800) {
+        return { href: baseUrls[provider], tooLong: true };
+    }
+    return { href: fullUrl, tooLong: false };
+}
 
-    if (targetUrl.length > 3800) {
-        navigator.clipboard.writeText(promptText).then(() => {
-            showNotification('Prompt is long — copied to clipboard! Paste it into the opened tab.');
-        }).catch(() => {});
-        window.open(baseUrls[provider], '_blank', 'noopener,noreferrer');
-    } else {
-        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+// Keep all AI launch links in the modal synced with the current prompt text
+function updateAILaunchLinks(modal, promptText) {
+    modal.querySelectorAll('.ai-launch-btn[data-provider]').forEach((link) => {
+        const provider = link.getAttribute('data-provider');
+        const info = getAILaunchInfo(provider, promptText);
+        link.href = info.href;
+        link.dataset.tooLong = info.tooLong ? 'true' : 'false';
+    });
+}
+
+// Copy to clipboard on click if the prompt exceeded safe URL length
+function handleAILaunchClick(link) {
+    if (link.dataset.tooLong === 'true') {
+        const modal = link.closest('.modal');
+        const promptText = modal ? modal.querySelector('.modal-prompt').textContent : '';
+        if (promptText && navigator.clipboard) {
+            navigator.clipboard.writeText(promptText).then(() => {
+                showNotification('Prompt is long — copied to clipboard! Paste it into the opened tab.');
+            }).catch(() => {});
+        }
     }
 }
 
@@ -215,9 +231,9 @@ function viewFullPrompt(button) {
             <div class="modal-footer">
                 <div class="modal-ai-launch">
                     <span class="modal-ai-label">Open in:</span>
-                    <button class="ai-launch-btn" type="button" onclick="openPromptInAI(this, 'chatgpt')">ChatGPT ↗</button>
-                    <button class="ai-launch-btn" type="button" onclick="openPromptInAI(this, 'claude')">Claude ↗</button>
-                    <button class="ai-launch-btn" type="button" onclick="openPromptInAI(this, 'perplexity')">Perplexity ↗</button>
+                    <a class="ai-launch-btn" data-provider="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" onclick="handleAILaunchClick(this)">ChatGPT ↗</a>
+                    <a class="ai-launch-btn" data-provider="claude" href="https://claude.ai/new" target="_blank" rel="noopener noreferrer" onclick="handleAILaunchClick(this)">Claude ↗</a>
+                    <a class="ai-launch-btn" data-provider="perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" onclick="handleAILaunchClick(this)">Perplexity ↗</a>
                 </div>
                 <div class="modal-main-actions">
                     <button class="copy-btn" type="button" onclick="copyFromModal(this)">
@@ -228,6 +244,8 @@ function viewFullPrompt(button) {
             </div>
         </div>
     `;
+
+    updateAILaunchLinks(modal, fullPrompt);
 
     if (placeholders.length) {
         const grid = modal.querySelector('.modal-filler-grid');
@@ -244,7 +262,9 @@ function viewFullPrompt(button) {
             input.placeholder = `[${key}]`;
             input.addEventListener('input', () => {
                 values[key] = input.value;
-                promptEl.textContent = buildFilledPrompt(fullPrompt, values);
+                const filled = buildFilledPrompt(fullPrompt, values);
+                promptEl.textContent = filled;
+                updateAILaunchLinks(modal, filled);
             });
 
             field.appendChild(labelText);
@@ -612,6 +632,10 @@ const modalStyles = `
 }
 
 .ai-launch-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
     background: #f1f5f9;
     color: #1e293b;
     border: 1px solid #cbd5e1;
