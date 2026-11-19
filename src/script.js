@@ -601,6 +601,10 @@ const modalStyles = `
     flex-wrap: wrap;
 }
 
+.modal-footer button {
+    white-space: nowrap;
+}
+
 .modal-ai-label {
     font-size: 0.85rem;
     font-weight: 600;
