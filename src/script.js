@@ -123,44 +123,173 @@ function copyPrompt(button) {
     });
 }
 
-// View full prompt in modal
+// Extract unique [Placeholder] tokens from a prompt template
+function extractPromptPlaceholders(template) {
+    const matches = [];
+    const seen = new Set();
+    const regex = /\[([^\]\n]{2,50})\](?!\()/g;
+    let match;
+    while ((match = regex.exec(template)) !== null) {
+        const key = match[1].trim();
+        if (key && !seen.has(key)) {
+            seen.add(key);
+            matches.push(key);
+        }
+    }
+    return matches;
+}
+
+// Replace filled placeholders in a prompt template
+function buildFilledPrompt(template, values) {
+    return template.replace(/\[([^\]\n]{2,50})\](?!\()/g, (full, rawKey) => {
+        const key = rawKey.trim();
+        const val = values[key];
+        return val && val.trim() ? val.trim() : full;
+    });
+}
+
+// Build AI launch URL for a provider (falls back to base URL when prompt is too long)
+function getAILaunchInfo(provider, promptText) {
+    const encoded = encodeURIComponent(promptText);
+    const urls = {
+        chatgpt: `https://chatgpt.com/?q=${encoded}`,
+        claude: `https://claude.ai/new?q=${encoded}`,
+        perplexity: `https://www.perplexity.ai/?q=${encoded}`
+    };
+    const baseUrls = {
+        chatgpt: 'https://chatgpt.com/',
+        claude: 'https://claude.ai/new',
+        perplexity: 'https://www.perplexity.ai/'
+    };
+    const fullUrl = urls[provider];
+    if (!fullUrl) return { href: '#', tooLong: false };
+    if (fullUrl.length > 3800) {
+        return { href: baseUrls[provider], tooLong: true };
+    }
+    return { href: fullUrl, tooLong: false };
+}
+
+// Keep all AI launch links in the modal synced with the current prompt text
+function updateAILaunchLinks(modal, promptText) {
+    modal.querySelectorAll('.ai-launch-btn[data-provider]').forEach((link) => {
+        const provider = link.getAttribute('data-provider');
+        const info = getAILaunchInfo(provider, promptText);
+        link.href = info.href;
+        link.dataset.tooLong = info.tooLong ? 'true' : 'false';
+    });
+}
+
+// Copy to clipboard on click if the prompt exceeded safe URL length
+function handleAILaunchClick(link) {
+    if (link.dataset.tooLong === 'true') {
+        const modal = link.closest('.modal');
+        const promptText = modal ? modal.querySelector('.modal-prompt').textContent : '';
+        if (promptText && navigator.clipboard) {
+            navigator.clipboard.writeText(promptText).then(() => {
+                showNotification('Prompt is long — copied to clipboard! Paste it into the opened tab.');
+            }).catch(() => {});
+        }
+    }
+}
+
+// View full prompt in modal with interactive placeholder filler & 1-click AI launch
 function viewFullPrompt(button) {
     const card = button.closest('.prompt-card');
-    const fullPrompt = card.getAttribute('data-full-prompt');
+    const fullPrompt = card.getAttribute('data-full-prompt') || '';
     const title = card.querySelector('.prompt-title').textContent;
-    
+    const placeholders = extractPromptPlaceholders(fullPrompt);
+    const values = {};
+
     // Create modal
     const modal = document.createElement('div');
     modal.className = 'modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+
+    const fillerMarkup = placeholders.length ? `
+        <div class="modal-filler">
+            <div class="modal-filler-head">
+                <strong><i class="fas fa-sliders-h"></i> Customize Placeholders (${placeholders.length})</strong>
+                <span class="modal-filler-hint">Fill in your class details to update the prompt live</span>
+            </div>
+            <div class="modal-filler-grid"></div>
+        </div>
+    ` : '';
+
     modal.innerHTML = `
         <div class="modal-content">
             <div class="modal-header">
-                <h2>${title}</h2>
-                <button class="modal-close" onclick="closeModal(this)">
+                <h2>${escapeHtml(title)}</h2>
+                <button class="modal-close" aria-label="Close modal" onclick="closeModal(this)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="modal-body">
+                ${fillerMarkup}
                 <pre class="modal-prompt">${escapeHtml(fullPrompt)}</pre>
             </div>
             <div class="modal-footer">
-                <button class="copy-btn" onclick="copyFromModal(this)">
-                    <i class="fas fa-copy"></i> Copy Prompt
-                </button>
-                <button class="view-btn" onclick="closeModal(this)">Close</button>
+                <div class="modal-ai-launch">
+                    <span class="modal-ai-label">Open in:</span>
+                    <a class="ai-launch-btn" data-provider="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" onclick="handleAILaunchClick(this)">ChatGPT ↗</a>
+                    <a class="ai-launch-btn" data-provider="claude" href="https://claude.ai/new" target="_blank" rel="noopener noreferrer" onclick="handleAILaunchClick(this)">Claude ↗</a>
+                    <a class="ai-launch-btn" data-provider="perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" onclick="handleAILaunchClick(this)">Perplexity ↗</a>
+                </div>
+                <div class="modal-main-actions">
+                    <button class="copy-btn" type="button" onclick="copyFromModal(this)">
+                        <i class="fas fa-copy"></i> Copy Prompt
+                    </button>
+                    <button class="view-btn" type="button" onclick="closeModal(this)">Close</button>
+                </div>
             </div>
         </div>
     `;
-    
+
+    updateAILaunchLinks(modal, fullPrompt);
+
+    if (placeholders.length) {
+        const grid = modal.querySelector('.modal-filler-grid');
+        const promptEl = modal.querySelector('.modal-prompt');
+        placeholders.forEach((key) => {
+            const field = document.createElement('label');
+            field.className = 'modal-filler-field';
+
+            const labelText = document.createElement('span');
+            labelText.textContent = key;
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = `[${key}]`;
+            input.addEventListener('input', () => {
+                values[key] = input.value;
+                const filled = buildFilledPrompt(fullPrompt, values);
+                promptEl.textContent = filled;
+                updateAILaunchLinks(modal, filled);
+            });
+
+            field.appendChild(labelText);
+            field.appendChild(input);
+            grid.appendChild(field);
+        });
+    }
+
+    const onKeyDown = (e) => {
+        if (e.key === 'Escape') {
+            closeModal(modal.querySelector('.modal-close'));
+        }
+    };
+    modal._onKeyDown = onKeyDown;
+    document.addEventListener('keydown', onKeyDown);
+
     document.body.appendChild(modal);
-    
+
     // Close on background click
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal(modal.querySelector('.modal-close'));
         }
     });
-    
+
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
 }
@@ -168,7 +297,10 @@ function viewFullPrompt(button) {
 // Close modal
 function closeModal(button) {
     const modal = button.closest('.modal');
-    modal.remove();
+    if (modal && modal._onKeyDown) {
+        document.removeEventListener('keydown', modal._onKeyDown);
+    }
+    if (modal) modal.remove();
     document.body.style.overflow = '';
 }
 
@@ -418,12 +550,107 @@ const modalStyles = `
     margin: 0;
 }
 
+.modal-filler {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.modal-filler-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e3a8a;
+    font-size: 0.9rem;
+}
+
+.modal-filler-hint {
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.modal-filler-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.65rem;
+}
+
+.modal-filler-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.modal-filler-field input {
+    padding: 0.45rem 0.65rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    color: #0f172a;
+    background: #ffffff;
+}
+
+.modal-filler-field input:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: -1px;
+}
+
 .modal-footer {
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
     border-top: 1px solid #e2e8f0;
     display: flex;
     gap: 1rem;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-ai-launch,
+.modal-main-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.modal-footer button {
+    white-space: nowrap;
+}
+
+.modal-ai-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.ai-launch-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.ai-launch-btn:hover {
+    background: #e2e8f0;
+    border-color: #2563eb;
+    color: #1d4ed8;
 }
 
 @media (max-width: 768px) {
