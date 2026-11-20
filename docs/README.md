@@ -42,6 +42,10 @@ A free, open-source collection of 160+ ready-to-use AI prompts specifically desi
 5. Customize the bracketed [ ] fields
 6. Generate your content!
 
+### AI for Educators eBook
+
+[Read or download the AI for Educators eBook (PDF)](https://lerlerchan.github.io/Prompt-libraries-for-Malaysia-Educators/docs/AI_for_educators_ENG-v6.pdf).
+
 ### For Developers (Local Setup)
 
 ```bash
